@@ -1,31 +1,88 @@
 <style scope>
+    @import "../font/demo.css";
+    @import "../font/iconfont.css";
+    body{
+        background-image: url("../images/bg_login.png");
+    }
     .login_on{
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .logo_{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 50px;
+            .logo_name{
+                font-family: HelveticaNeue;
+                font-size: 14px;
+                color: #9B9B9B;
+                line-height: 14px;
+            }
+            .logo_words{
+                color: #A4A0A2;
+                font-size: 12px;
+                font-family: 'PingFangSC-Regular';
+                line-height: 17px;
+                word-spacing: 0.67px;
+                margin-top: 10px;
+            }
+        }
         .form{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 200px;
-            height: 400px;
-            width: 700px;
-            background-color: #fff;
+            margin-top: 60px;
+            height: 280px;
+            width: 480px;
             border-radius: 8px;
             padding: 20px;
-            border: 1px solid #e6e6e6;
-            box-shadow:0 0 1px #dcdcdc;
             text-align: center;
+            background: #FFFFFF;
+            border: 1px solid #E5E5E5;
+            box-shadow: 0 4px 14px 0 rgba(0,0,0,0.10);
             .title_remind{
-                margin: 30px 0 10px 0;
-                width: 300px;
-                text-align: left
+                margin: 30px 0 0 0;
+                width: 380px;
+                text-align: left;
+                font-family: HelveticaNeue;
+                font-size: 14px;
+                color: #9B9B9B;
+                line-height: 14px;
             }
             .input_val{
                 margin: 10px 0;
+                .input_class{
+                    background: #FBFBFB;
+                    border: 1px solid #EAEAEA;
+                    border-radius: 2px;
+                    height: 48px;
+                    width: 380px;
+                    padding: 5px 10px;
+
+                    ont-family: PingFangSC-Regular;
+                    font-size: 16px;
+                    color: #4E5056;
+                    line-height: 14px;
+                }
             }
             .button_clil{
-                margin: 10px 0;
+                margin: 30px 0;
+                .button_clil_button{
+                    background: #E6655F;
+                    border-radius: 30px;
+                    height: 48px;
+                    width: 380px;
+                    font-family: FZLTZHK--GBK1-0;
+                    font-size: 16px;
+                    color: #FFFFFF;
+                    line-height: 16px;
+                    border: 1px solid #E5E5E5;
+                    cursor: pointer;
+                }
             }
             .icon_top{
                 display: flex;
@@ -53,27 +110,48 @@
                 }
             }
         }
+        .navigation{
+            position: fixed;
+            bottom: 40px;
+            text-align: center;
+            display: flex;
+            font-family: PingFangSC-Regular;
+            font-size: 12px;
+            color: #A4A0A2;
+            letter-spacing: 0.67px;
+            line-height: 30px;
+        }
     }
 </style>
 <template>
     <div class="login_on">
-        <div class="form">
-            <div class="icon_top">
-                <div class="top_left">
-                    系统icon
-                </div>
-                <div class="line_column"></div>
-                <div class="words">
-                    icefrog医疗数据查询系统用户数据信息查询
-                </div>
+        <div class="logo_">
+            <i style="font-size: 100px;" class="icon iconfont icon-danao---"></i>
+            <div class="logo_name">
+                脑认知数据平台
             </div>
-            <div class="title_remind" >请输入用户编号：</div>
+            <div class="logo_words">
+                BRAIN COGNITIVE DATA PLATFORM
+            </div>
+        </div>
+        <div class="form">
+            <div class="title_remind" >
+                <i style="font-size: 20px;position: relative;top: 2px;color: #D8D8D8;" class="icon iconfont icon-zhanghao-"></i>
+                &nbsp;&nbsp;请输入用户编号：
+            </div>
             <div class="input_val">
-                <Input v-model="value" placeholder="input something..." style="width: 300px" />
+                <input type="text" class="input_class">
             </div>
             <div class="button_clil">
-                <Button  icon="ios-search" type="primary" style="width: 300px">开始查询</Button>
+                <button class="button_clil_button">开始查询</button>
             </div>
+        </div>
+        <div class="navigation">
+            <img height="30" src="../images/mindfrog.png" alt="">
+
+            <span>
+                &nbsp;&nbsp;&nbsp;&nbsp;Copyright © Mindfrog All rights reserved
+            </span>
         </div>
     </div>
 </template>
