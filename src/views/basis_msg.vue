@@ -1,31 +1,50 @@
 <style scope>
     body{
         background: #FAFAFA;
-        background-image: none;
+        background-image: none!important;
     }
     .box_all{
         .aside{
+            width: 16%;
             z-index: 10000;
-            background-color: #515a6e;
             position: fixed;
             left: 0;
-            width: 240px;
             height: 100%;
-            color: #ffffff;
-            font-size: 16px;
-            text-align: center;
             top: 64px;
+            background: #F5F5F5;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
+            padding: 0 20px;
+            font-family: HelveticaNeue-Medium;
+            font-size: 12px;
+            color: #4E5056;
+            text-align: center;
+            line-height: 14px;
+            .line_ss{
+                background: #ECECEC;
+                height: 1px;
+            }
             .name{
+                text-align: left;
+                font-family: PingFangSC-Regular;
+                font-size: 12px;
+                color: #9B9B9B;
+                line-height: 14px;
+            }
+            .valus_{
                 text-align: right;
             }
             .name_large{
                 text-align: center;
-                font-size: 20px;
+                font-family: PingFangSC-Medium;
+                font-size: 16px;
+                color: #4E5056;
+                letter-spacing: 0.67px;
+                line-height: 26px;
             }
             .imgs{
                 border-radius: 50%;
-                width: 100px;
-                height: 100px;
+                width: 80px;
+                height: 80px;
                 box-shadow:0 0 10px #000;
             }
         }
@@ -34,13 +53,18 @@
             height: 64px;
             .tops_title{
                 display: flex;
+                height: 64px;
                 justify-content: space-between;
                 .tops_title_one{
                     display: flex;
+                    align-items: center;
                     .diatitle{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        padding-left: 10px;
                         .titles{
                             font-size: 16px;
-                            padding: 0 10px;
                             font-family: HelveticaNeue-Medium;
                             font-size: 16px;
                             color: #FFFFFF;
@@ -98,57 +122,64 @@
                 <Col class="name_large" span="24">张学友</Col>
             </Row>
             <br>
-            <Button type="primary">返回首页</Button>
             <br>
             <br>
-            <Row>
-                <Col class="name" span="12">性别：</Col>
-                <Col span="12">男</Col>
-            </Row>
+            <div class="line_ss"></div>
             <br>
             <Row>
                 <Col class="name" span="12">身高：</Col>
-                <Col span="12">180cm</Col>
+                <Col class="valus_" span="12">180cm</Col>
             </Row>
+            <br>
             <br>
             <Row>
                 <Col class="name" span="12">体重：</Col>
-                <Col span="12">70kg</Col>
+                <Col class="valus_" span="12">70kg</Col>
             </Row>
+            <br>
             <br>
             <Row>
                 <Col class="name" span="12">年龄：</Col>
-                <Col span="12">40岁</Col>
+                <Col class="valus_" span="12">40岁</Col>
             </Row>
+            <br>
             <br>
             <Row>
                 <Col class="name" span="12">血缘：</Col>
-                <Col span="12">O型</Col>
+                <Col class="valus_" span="12">O型</Col>
             </Row>
+            <br>
             <br>
             <Row>
                 <Col class="name" span="12">过敏源：</Col>
-                <Col span="12">暂无</Col>
+                <Col class="valus_" span="12">暂无</Col>
             </Row>
+            <br>
             <br>
             <Row>
                 <Col class="name" span="12">病院编号：</Col>
-                <Col span="12">12345</Col>
+                <Col class="valus_" span="12">12345</Col>
             </Row>
+            <br>
             <br>
             <Row>
                 <Col class="name" span="12">患者类型：</Col>
-                <Col span="12">普通</Col>
+                <Col class="valus_" span="12">普通</Col>
             </Row>
+            <br>
             <br>
             <Row>
                 <Col class="name" span="12">送检科室：</Col>
-                <Col span="12">内科</Col>
+                <Col class="valus_" span="12">内科</Col>
             </Row>
+            <br>
             <br>
             <Row>
                 <Col class="name" span="12">诊断结果：</Col>
-                <Col span="12">待定</Col>
+            </Row>
+            <Row>
+                <br>
+                <Col class="valus_" style="text-align: left" span="12">待定</Col>
             </Row>
             <br>
 
@@ -156,7 +187,7 @@
         <div class="box_content">
             <div class="tops_title">
                 <div class="tops_title_one">
-                    <i style="font-size: 50px;" class="icon iconfont icon-danao---"></i>
+                    <i style="font-size: 40px;margin-left: 10px" class="icon iconfont icon-danao---"></i>
                     <div class="diatitle">
                         <div class="titles">
                             脑认知数据平台

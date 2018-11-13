@@ -1,4 +1,4 @@
-webpackJsonp([1],[
+webpackJsonp([5],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -27,7 +27,39 @@ var routers = [{
         title: ''
     },
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(17)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(19)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    }
+}, {
+    path: '/search',
+    meta: {
+        title: ''
+    },
+    component: function component(resolve) {
+        return __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(17)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    }
+}, {
+    path: '/echart',
+    meta: {
+        title: ''
+    },
+    component: function component(resolve) {
+        return __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(18)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    }
+}, {
+    path: '/login',
+    meta: {
+        title: ''
+    },
+    component: function component(resolve) {
+        return __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(20)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    }
+}, {
+    path: '/search_show',
+    meta: {
+        title: ''
+    },
+    component: function component(resolve) {
+        return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(21)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     }
 }];
 /* harmony default export */ __webpack_exports__["a"] = (routers);
@@ -52,11 +84,11 @@ var Component = __webpack_require__(9)(
   /* template */
   __webpack_require__(16),
   /* scopeId */
-  "data-v-25812d3c",
+  "data-v-1fa2cf2e",
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\luchaoming\\Desktop\\项目\\project\\src\\app.vue"
+Component.options.__file = "C:\\Users\\Administrator\\Desktop\\外包\\医院项目\\project\\hopitals\\src\\app.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] app.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -67,9 +99,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-25812d3c", Component.options)
+    hotAPI.createRecord("data-v-1fa2cf2e", Component.options)
   } else {
-    hotAPI.reload("data-v-25812d3c", Component.options)
+    hotAPI.reload("data-v-1fa2cf2e", Component.options)
   }
 })()}
 
@@ -231,7 +263,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-25812d3c", module.exports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-1fa2cf2e", module.exports)
   }
 }
 
