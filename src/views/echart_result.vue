@@ -1,12 +1,18 @@
 <style scope>
     .echart_result{
         .contents_des{
-            margin-left: 240px;
+            display: flex;
             .title{
                 margin: 0 20px;
             }
             .view_chart{
-                padding: 30px;
+                .pad_10{
+                    margin: 10px;
+                    background: #FFFFFF;
+                    box-shadow: 0 0 4px 0 rgba(0,0,0,0.10);
+                    border-radius: 4px;
+                    padding: 10px;
+                }
             }
             .view_chart_title_cons{
 
@@ -21,55 +27,59 @@
             }
         }
     }
+
+    .box_flowing{
+        display: flex;
+    }
+    .xu_ni{
+        width: 16%;
+        height: 900px;
+    }
 </style>
 <template>
     <div class="echart_result">
         <baisis_msg></baisis_msg>
         <div class="contents_des">
-            <div class="title" style="background: #f8f8f9">
-                <Card title="图标展示" icon="ios-options" :padding="0" shadow >
-                    <div class="view_chart_title_cons">
-                        <Row class="view_chart_title">
-                            <Col class="name" span="2">
-                            报告送检时间：
-                            </Col>
-                            <Col span="2">
-                            2018-01-10
-                            </Col>
-                            <Col span="1">
-                            至
-                            </Col>
-                            <Col span="2">
-                            2018-03-10
-                            </Col>
-                        </Row>
-                        <Row class="view_chart_title">
-                            <Col class="name" span="3" >
-                            图标内包含的报告编号：
-                            </Col>
-                            <Col span="21">
-                            12345，12354，54541，44545
-                            </Col>
-                        </Row>
-                    </div>
-                    <Row>
-                        <Col span="12" class="view_chart">
-                            <div id="main_one" style="height: 400px;"></div>
-                        </Col>
-                        <Col span="12" class="view_chart">
-                            <div id="main_two" style="height: 400px;"></div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col span="12" class="view_chart">
-                            <div id="main_three" style="height: 400px;"></div>
-                        </Col>
-                        <Col span="12" class="view_chart">
-                            <div id="main_four" style="height: 400px;"></div>
-                        </Col>
-                    </Row>
-                </Card>
 
+            <div class="xu_ni"></div>
+            <div class="contents_detail">
+                <div class="title_tagss">
+                    <div class="postitaons">
+                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
+
+                        <span>首页</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
+
+                        <span>压力反应测试</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
+
+                        <span>图标展示</span>
+                    </div>
+                    <div class="postitao_ctr">
+                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-remind-"></i>
+                        <span class="center_tlt">报告编号：<b>129825</b></span>
+                    </div>
+                </div>
+                <div class="title" style="background: #f8f8f9">
+                    <Row>
+                        <Col span="8" class="view_chart">
+                            <div class="pad_10" id="main_one" style="height: 400px;"></div>
+                        </Col>
+                        <Col span="8" class="view_chart">
+                            <div class="pad_10" id="main_two" style="height: 400px;"></div>
+                        </Col>
+                        <Col span="8" class="view_chart">
+                            <div class="pad_10" id="main_four" style="height: 400px;"></div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col span="8" class="view_chart">
+                            <div class="pad_10" id="main_three" style="height: 400px;"></div>
+                        </Col>
+                    </Row>
+                </div>
             </div>
         </div>
     </div>
@@ -220,68 +230,48 @@
 
             },
             echart_two(){
-                var option={
+                var option = {
                     title: {
-                        text: '折线图堆叠'
+                        text: '世界人口总量',
+                        subtext: '数据来自网络'
                     },
                     tooltip: {
-                        trigger: 'axis'
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow'
+                        }
                     },
                     legend: {
-                        data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+                        data: ['2011年', '2012年']
                     },
                     grid: {
                         left: '3%',
-                            right: '4%',
-                            bottom: '3%',
-                            containLabel: true
-                    },
-                    toolbox: {
-                        feature: {
-                            saveAsImage: {}
-                        }
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
                     },
                     xAxis: {
-                        type: 'category',
-                            boundaryGap: false,
-                            data: ['周一','周二','周三','周四','周五','周六','周日']
+                        type: 'value',
+                        boundaryGap: [0, 0.01]
                     },
                     yAxis: {
-                        type: 'value'
+                        type: 'category',
+                        data: ['巴西','印尼','美国','印度','中国','世界人口(万)']
                     },
                     series: [
                         {
-                            name:'邮件营销',
-                            type:'line',
-                            stack: '总量',
-                            data:[120, 132, 101, 134, 90, 230, 210]
+                            name: '2011年',
+                            type: 'bar',
+                            data: [18203, 23489, 29034, 104970, 131744, 630230]
                         },
                         {
-                            name:'联盟广告',
-                            type:'line',
-                            stack: '总量',
-                            data:[220, 182, 191, 234, 290, 330, 310]
-                        },
-                        {
-                            name:'视频广告',
-                            type:'line',
-                            stack: '总量',
-                            data:[150, 232, 201, 154, 190, 330, 410]
-                        },
-                        {
-                            name:'直接访问',
-                            type:'line',
-                            stack: '总量',
-                            data:[320, 332, 301, 334, 390, 330, 320]
-                        },
-                        {
-                            name:'搜索引擎',
-                            type:'line',
-                            stack: '总量',
-                            data:[820, 932, 901, 934, 1290, 1330, 1320]
+                            name: '2012年',
+                            type: 'bar',
+                            data: [19325, 23438, 31000, 121594, 134141, 681807]
                         }
                     ]
-                }
+                };
+
                 return option;
             },
             echart_three(){
