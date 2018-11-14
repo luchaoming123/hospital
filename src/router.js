@@ -33,6 +33,13 @@ const routers = [
             title: ''
         },
         component: (resolve) => require(['./views/only_search.vue'], resolve)
+    },
+    {
+        path: '/sort',
+        meta: {
+            title: ''
+        },
+        component: (resolve) => require(['./views/pai_ming.vue'], resolve)
     }
 ];
 export default routers;

@@ -6,7 +6,7 @@
     .box_all{
         .aside{
             width: 16%;
-            z-index: 10000;
+            z-index: 100;
             position: fixed;
             left: 0;
             height: 100%;
@@ -19,6 +19,7 @@
             color: #4E5056;
             text-align: center;
             line-height: 14px;
+            border-right: 1px solid #d8d8d8;
             .line_ss{
                 background: #ECECEC;
                 height: 1px;
@@ -51,6 +52,14 @@
         .box_content{
             background: #373737;
             height: 64px;
+            .tops_title_fixed{
+                width: 100%;
+                background: #373737;
+                height: 64px;
+                position: fixed;
+                top:0;
+                z-index: 100;
+            }
             .tops_title{
                 display: flex;
                 height: 64px;
@@ -108,6 +117,13 @@
 
     }
 
+    .title_tagss{
+        position: fixed;
+        z-index: 100;
+    }
+    .title{
+        margin: 70px 20px 20px 20px!important;
+    }
 </style>
 <template>
     <div class="box_all">
@@ -186,6 +202,9 @@
         </div>
         <div class="box_content">
             <div class="tops_title">
+
+            </div>
+            <div class="tops_title tops_title_fixed">
                 <div class="tops_title_one">
                     <i style="font-size: 40px;margin-left: 10px" class="icon iconfont icon-danao---"></i>
                     <div class="diatitle">
@@ -204,12 +223,6 @@
                 </div>
             </div>
             <br>
-            <div class="tops">
-                <Breadcrumb>
-                    <BreadcrumbItem to="/">首页</BreadcrumbItem>
-                    <BreadcrumbItem>VR产检报告</BreadcrumbItem>
-                </Breadcrumb>
-            </div>
 
         </div>
     </div>

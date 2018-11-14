@@ -28,11 +28,41 @@
                         width: 100px;
                         line-height: 28px;
 
+                        font-family: PingFangSC-Regular;
+                        font-size: 12px;
+                        color: #FFFFFF;
+
                     }
 
                 }
                 .tables{
                     padding: 20px;
+                    .table_real{
+                        width: 100%;
+                        text-align: left;
+                        th{
+                            font-family: PingFangSC-Regular;
+                            font-size: 12px;
+                            color: #9B9B9B;
+                            text-align: center;
+                            line-height: 14px;
+                            height: 50px;
+                        }
+                        td{
+                            font-family: PingFangSC-Regular;
+                            font-size: 14px;
+                            color: #4E5056;
+                            text-align: center;
+                            line-height: 14px;
+                            height: 60px;
+                            border-bottom: 1px solid #ECECEC;
+                        }
+                        tbody{
+                            background: #F9F9F9;
+                            height: 560px!important;
+                            overflow-y: scroll;
+                        }
+                    }
                 }
             }
         }
@@ -172,6 +202,66 @@
         background: #E6655F;
         top:7px;
     }
+    .buton_choise{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding-bottom: 30px;
+        .btin{
+            background: #FFFFFF;
+            border: 1px solid #E7E7E7;
+            border-radius: 22px;
+            width: 180px;
+            height: 40px;
+            font-family: PingFangSC-Medium;
+            font-size: 14px;
+            color: #000000;
+            line-height: 40px;
+            cursor: pointer;
+            text-align: center;
+            span{
+                position: relative;
+                bottom: 4px;
+            }
+        }
+    }
+
+
+    .alert_css{
+        padding:0 20px;
+        .titles{
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            color: #4E5056;
+            line-height: 14px;
+            padding: 20px 10px 10px 0;
+        }
+
+        .name_black{
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            color: #9B9B9B!important;
+            text-align: center;
+            line-height: 14px;
+            background: #F9F9F9;
+        }
+        td{
+            border: 1px solid #D8D8D8;
+            width: 200px;
+            height: 40px;
+            text-align: center;
+
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            color: #000000;
+            text-align: center;
+            line-height: 14px;
+        }
+        .butoton_box{
+            display: flex;
+            justify-content: center;
+        }
+    }
 </style>
 <template>
     <div class="search_content">
@@ -190,7 +280,7 @@
                     </div>
                     <div class="postitao_ctr">
                         <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-remind-"></i>
-                        <span class="center_tlt">请选择测试项目</span>
+                        <span class="center_tlt">请选择报告</span>
                     </div>
                 </div>
                 <div class="title" style="background: #f8f8f9">
@@ -205,16 +295,153 @@
                         </div>
 
                         <div class="time_limit_confirm">
-                            <i style="font-size: 14px;color: #D8D8D8;margin-top: 7px" class="icon-search-"></i>&nbsp;&nbsp;重新搜索
+                            <i style="font-size: 14px;color: #fff;margin-top: 7px" class="icon iconfont icon-search-"></i>&nbsp;&nbsp;重新搜索
                         </div>
                     </div>
                     <div class="line_fc"></div>
                     <div class="tables">
-                        <Table border :columns="columns1" :data="data1"></Table>
+                        <table class="table_real">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>报告编号</th>
+                                    <th>送检时间</th>
+                                    <th>报告时间</th>
+                                    <th>送检医生</th>
+                                    <th>送检人员</th>
+                                    <th>报告字段1</th>
+                                    <th>报告字段2</th>
+                                    <th>报告字段3</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: right;width: 50px"><Radio style="color: #D75E5B;"></Radio></td>
+                                    <td style="width: 80px">123456</td>
+                                    <td style="font-size: 12px">123456</td>
+                                    <td style="font-size: 12px;">123456</td>
+                                    <td>123456</td>
+                                    <td>123456</td>
+                                    <td>123456</td>
+                                    <td style="color: #E6655F">839 <i style="transform: rotate(-180deg);color: #E6655F;font-size: 8px" class="icon iconfont icon-down-"></i></td>
+                                    <td style="color: #7FC765">839 <i style="transform: rotate(-180deg);color: #7FC765;font-size: 8px" class="icon iconfont icon-down-"></i></td>
+                                    <td  @click="click_alert()"><i style="font-size: 20px;color: rgb(204,204,204)" class="icon iconfont icon-baogao-"></i></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right;width: 50px"><Radio style="color: #D75E5B;"></Radio></td>
+                                    <td style="width: 80px">123456</td>
+                                    <td style="font-size: 12px">123456</td>
+                                    <td style="font-size: 12px;">123456</td>
+                                    <td>123456</td>
+                                    <td>123456</td>
+                                    <td>123456</td>
+                                    <td style="color: #E6655F">839 <i style="transform: rotate(-180deg);color: #E6655F;font-size: 8px" class="icon iconfont icon-down-"></i></td>
+                                    <td style="color: #7FC765">839 <i style="transform: rotate(-180deg);color: #7FC765;font-size: 8px" class="icon iconfont icon-down-"></i></td>
+                                    <td @click="click_alert()"><i style="font-size: 20px;color: rgb(204,204,204)" class="icon iconfont icon-baogao-"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="buton_choise">
+                        <div class="btin">
+                            <i style="font-size: 22px;color: #D8D8D8;" class="icon iconfont icon-tubiao-"></i>&nbsp;&nbsp;
+                            <span>按图标展示</span>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="btin">
+                            <i style="font-size: 22px;color: #D8D8D8;" class="icon iconfont icon-ranking-"></i>&nbsp;&nbsp;
+                            <span>查看排名</span>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
+
+        <!--弹框-->
+        <Modal
+                v-model="modal6"
+                title="报告编号：13251"
+                :loading="loading"
+                fullscreen
+                @on-ok="asyncOK" width="1200">
+                <div class="alert_css">
+                    <div class="titles">
+                        患者信息
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="name_black">姓名</td><td>张三</td>
+                                <td class="name_black">性别</td><td>张三</td>
+                                <td class="name_black">身高</td><td>张三</td>
+                            </tr>
+                            <tr>
+                                <td class="name_black">体重</td><td>张三</td>
+                                <td class="name_black">年龄</td><td>张三</td>
+                                <td class="name_black">血型</td><td>张三</td>
+                            </tr>
+                            <tr>
+                                <td class="name_black">过敏史</td><td>张三</td>
+                                <td class="name_black">病院编号</td><td>张三</td>
+                                <td class="name_black">患者类型</td><td>张三</td>
+                            </tr>
+                            <tr>
+                                <td class="name_black">送检科室</td><td>张三</td>
+                                <td class="name_black">诊断结果</td><td colspan="3" >张三</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="titles">
+                        患者信息
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="name_black">编号</td><td class="name_black">编号</td>
+                                <td class="name_black">编号</td><td class="name_black">编号</td>
+                            </tr>
+                            <tr>
+                                <td>体重</td><td>张三</td>
+                                <td>年龄</td><td>张三</td>
+                            </tr>
+                            <tr>
+                                <td>体重</td><td>张三</td>
+                                <td>年龄</td><td>张三</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="titles">
+                        患者信息
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="name_black">姓名</td><td>张三</td>
+                                <td class="name_black">性别</td><td>张三</td>
+                                <td class="name_black">身高</td><td>张三</td>
+                            </tr>
+                            <tr>
+                                <td class="name_black">体重</td><td>张三</td>
+                                <td class="name_black">年龄</td><td>张三</td>
+                                <td class="name_black">血型</td><td>张三</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            <div slot="footer" style="text-align: center;margin: 10px 0 20px 0">
+                <div class="butoton_box">
+                    <Button shape="circle" style="width: 140px"><i style="font-size: 20px;color: #D8D8D8;" class="icon iconfont icon-export-"></i> 导出</Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <Button shape="circle" style="width: 140px"><i style="font-size: 20px;color: #D8D8D8;" class="icon iconfont icon-print-"></i> 打印</Button>
+                </div>
+
+            </div>
+        </Modal>
     </div>
 </template>
 
@@ -223,6 +450,8 @@
     export default {
         data () {
             return {
+                modal6: false,
+                loading: true,
                 columns1: [
                     {
                         title: 'Name',
@@ -271,6 +500,14 @@
         methods:{
             exit(){
 
+            },
+            asyncOK () {
+                setTimeout(() => {
+                    this.modal6 = false;
+                }, 2000);
+            },
+            click_alert(){
+                this.modal6 = true
             }
         }
     }
