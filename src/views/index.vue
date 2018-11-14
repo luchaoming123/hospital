@@ -6,6 +6,7 @@
     .index_all{
         .contents_detail{
             width: 84%;
+            background: #FFFFFF;
             .title_tagss{
                 height: 50px;
                 background: #FFFFFF;
