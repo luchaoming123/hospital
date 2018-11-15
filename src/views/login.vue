@@ -16,10 +16,12 @@
             justify-content: center;
             margin-top: 50px;
             .logo_name{
-                font-family: HelveticaNeue;
-                font-size: 14px;
-                color: #9B9B9B;
-                line-height: 14px;
+
+                font-family: HelveticaNeue-Medium;
+                font-size: 24px;
+                color: #4E5056;
+                letter-spacing: 1px;
+                line-height: 26px;
             }
             .logo_words{
                 color: #A4A0A2;

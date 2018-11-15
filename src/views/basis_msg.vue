@@ -33,6 +33,11 @@
             }
             .valus_{
                 text-align: right;
+                font-family: HelveticaNeue-Medium;
+                font-size: 12px;
+                color: #4E5056;
+                text-align: right;
+                line-height: 14px;
             }
             .name_large{
                 text-align: center;
