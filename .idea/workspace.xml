@@ -18,9 +18,52 @@
       <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/index.vue">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="2931">
+              <caret line="210" column="55" lean-forward="true" selection-start-line="210" selection-start-column="55" selection-end-line="210" selection-end-column="55" />
+              <folding>
+                <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#1;n#div#0;n#div#0;n#Row#0;n#div#1;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#1;n#div#0;n#Row#0;n#div#1;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#6142#6148#0" expanded="true" />
+                <element signature="e#6148#6154#0" expanded="true" />
+                <element signature="e#6154#6160#0" expanded="true" />
+                <element signature="e#6160#6166#0" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#2;n#div#0;n#Row#0;n#div#1;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#6546#6552#0" expanded="true" />
+                <element signature="e#6552#6558#0" expanded="true" />
+                <element signature="e#6558#6564#0" expanded="true" />
+                <element signature="e#6564#6570#0" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#1;n#div#0;n#div#1;n#Row#0;n#div#1;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#1;n#div#1;n#Row#0;n#div#1;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#7815#7821#0" expanded="true" />
+                <element signature="e#7821#7827#0" expanded="true" />
+                <element signature="e#7827#7833#0" expanded="true" />
+                <element signature="e#7833#7839#0" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#2;n#div#1;n#Row#0;n#div#1;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#8219#8225#0" expanded="true" />
+                <element signature="e#8225#8231#0" expanded="true" />
+                <element signature="e#8231#8237#0" expanded="true" />
+                <element signature="e#8237#8243#0" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#1;n#div#0;n#div#2;n#Row#0;n#div#1;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#1;n#div#2;n#Row#0;n#div#1;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#9492#9498#0" expanded="true" />
+                <element signature="e#9498#9504#0" expanded="true" />
+                <element signature="e#9504#9510#0" expanded="true" />
+                <element signature="e#9510#9516#0" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#2;n#div#2;n#Row#0;n#div#1;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#9896#9902#0" expanded="true" />
+                <element signature="e#9902#9908#0" expanded="true" />
+                <element signature="e#9908#9914#0" expanded="true" />
+                <element signature="e#9914#9920#0" expanded="true" />
+              </folding>
+=======
             <state relative-caret-position="278">
               <caret line="137" column="39" lean-forward="false" selection-start-line="137" selection-start-column="28" selection-end-line="137" selection-end-column="39" />
               <folding />
+>>>>>>> 26ed2ec4ff5e8a964b4bb47f28ec0579aab9b56f
             </state>
           </provider>
         </entry>
@@ -479,18 +522,37 @@
       <updated>1540866216422</updated>
       <workItem from="1540866218237" duration="25374000" />
       <workItem from="1542087116333" duration="11954000" />
+<<<<<<< HEAD
+      <workItem from="1542112176799" duration="6515000" />
+=======
       <workItem from="1542112176799" duration="6093000" />
       <workItem from="1542155907861" duration="3288000" />
       <workItem from="1542161587398" duration="611000" />
+<<<<<<< HEAD
       <workItem from="1542163451315" duration="13422000" />
+=======
+      <workItem from="1542163451315" duration="12653000" />
+>>>>>>> 26ed2ec4ff5e8a964b4bb47f28ec0579aab9b56f
+>>>>>>> ce32dd2bf98bbf646eb8eb542e402a5dc48ae6ed
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="60742000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="43843000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1932" height="1056" extended-state="1" />
+=======
+    <option name="totallyTimeSpent" value="59973000" />
+>>>>>>> ce32dd2bf98bbf646eb8eb542e402a5dc48ae6ed
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1918" height="1038" extended-state="1" />
+>>>>>>> 26ed2ec4ff5e8a964b4bb47f28ec0579aab9b56f
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973711" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1276,8 +1338,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/pai_ming.vue">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="2931">
+          <caret line="210" column="55" lean-forward="true" selection-start-line="210" selection-start-column="55" selection-end-line="210" selection-end-column="55" />
+=======
         <state relative-caret-position="280">
           <caret line="57" column="34" lean-forward="false" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+>>>>>>> 26ed2ec4ff5e8a964b4bb47f28ec0579aab9b56f
           <folding>
             <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="e#1047#1053#0" expanded="true" />
