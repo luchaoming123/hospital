@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f1e04e8-6af8-4c9c-9e04-b0357e344068" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/router.js" afterPath="$PROJECT_DIR$/src/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/basis_msg.vue" afterPath="$PROJECT_DIR$/src/views/basis_msg.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/content_search.vue" afterPath="$PROJECT_DIR$/src/views/content_search.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/echart_result.vue" afterPath="$PROJECT_DIR$/src/views/echart_result.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/only_search.vue" afterPath="$PROJECT_DIR$/src/views/only_search.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.base.config.js" afterPath="$PROJECT_DIR$/webpack.base.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.prod.config.js" afterPath="$PROJECT_DIR$/webpack.prod.config.js" />
-    </list>
+    <list default="true" id="6f1e04e8-6af8-4c9c-9e04-b0357e344068" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -395,7 +385,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../开发/gm系统" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -492,12 +482,12 @@
       <workItem from="1542112176799" duration="6093000" />
       <workItem from="1542155907861" duration="3288000" />
       <workItem from="1542161587398" duration="611000" />
-      <workItem from="1542163451315" duration="12653000" />
+      <workItem from="1542163451315" duration="13422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59973000" />
+    <option name="totallyTimeSpent" value="60742000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1918" height="1038" extended-state="1" />
