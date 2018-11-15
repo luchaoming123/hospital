@@ -2,7 +2,7 @@
     @import "../font/demo.css";
     @import "../font/iconfont.css";
     body{
-        background-image: url("../images/bg_login.png");
+        background-image: url("../images/bg_login.png") !important;
     }
     .login_on{
         display: flex;
@@ -59,14 +59,19 @@
                     background: #FBFBFB;
                     border: 1px solid #EAEAEA;
                     border-radius: 2px;
-                    height: 48px;
+                    height: 48px!important;
                     width: 380px;
-                    padding: 5px 10px;
 
                     ont-family: PingFangSC-Regular;
                     font-size: 16px;
                     color: #4E5056;
                     line-height: 14px;
+                }
+                .input_class:hover{
+                    border-color: #E6655F!important;
+                }
+                .input_class:focus{
+                    border-color: #E6655F!important;
                 }
             }
             .button_clil{
@@ -126,7 +131,8 @@
 <template>
     <div class="login_on">
         <div class="logo_">
-            <i style="font-size: 100px;" class="icon iconfont icon-danao---"></i>
+            <!--<i style="font-size: 100px;" class="icon iconfont icon-danao-&#45;&#45;"></i>-->
+            <img  height="100" width="100" style="margin: 0 auto" src="../images/danao-2-01-01.png" alt="">
             <div class="logo_name">
                 脑认知数据平台
             </div>
@@ -140,10 +146,10 @@
                 &nbsp;&nbsp;请输入用户编号：
             </div>
             <div class="input_val">
-                <input type="text" class="input_class">
+                <input type="text" v-model="value_num" class="input_class">
             </div>
             <div class="button_clil">
-                <button class="button_clil_button">开始查询</button>
+                <Button class="button_clil_button" @click="login_submit()" type="primary" shape="circle">开始查询</Button>
             </div>
         </div>
         <div class="navigation">
@@ -157,10 +163,12 @@
 </template>
 
 <script>
+    import $ from 'jquery'
     export default {
         data () {
             return {
-                theme3: 'dark'
+                theme3: 'dark',
+                value_num:''
             }
         },
         components:{
@@ -168,6 +176,15 @@
         },
         methods:{
             exit(){
+
+            },
+            login_submit(){
+                var that=this;
+                if($.trim(that.value_num) == ''){
+                    this.$Message.error('请先填写要查询的编号');
+                    return false;
+                }
+                that.$router.push({ name: 'date', params: { userId: 123 }})
 
             }
         }

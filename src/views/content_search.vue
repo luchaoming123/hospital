@@ -91,7 +91,7 @@
                 position: absolute;
             }
             .postitao_ctr{
-                width: 100%;
+                width: 84%;
                 text-align: center;
                 .center_tlt{
                     font-family: PingFangSC-Regular;
@@ -208,7 +208,7 @@
         width: 100%;
         padding-bottom: 30px;
         .btin{
-            background: #FFFFFF;
+            background: #FFFFFF!important;
             border: 1px solid #E7E7E7;
             border-radius: 22px;
             width: 180px;
@@ -223,6 +223,9 @@
                 position: relative;
                 bottom: 4px;
             }
+        }
+        .btin:hover{
+            color: #000000!important;
         }
     }
 
@@ -262,6 +265,36 @@
             justify-content: center;
         }
     }
+
+
+    .ivu-date-picker-cells-cell-selected:hover em, .ivu-date-picker-cells-cell-selected em{
+        background-color: #E6655F!important;
+    }
+    .ivu-date-picker-cells-focused em{
+        box-shadow: inset 0 0 0 1px #E6655F!important;
+    }
+    .ivu-date-picker-cells-cell-today em:after{
+        background:  #E6655F!important;
+    }
+    .ivu-input:focus, .ivu-input:hover{
+        border-color: #E6655F!important;
+    }
+    .ivu-date-picker-focused input{
+        border-color: #E6655F!important;
+    }
+    .ivu-input:focus{
+        box-shadow: none!important;
+    }
+
+    button:hover,input:hover{
+        border-color: #E6655F!important;
+    }
+    button:focus,input:focus{
+        border-color: #E6655F!important;
+    }
+    button:visited,input:visited{
+        border:1px solid #E6655F!important;
+    }
 </style>
 <template>
     <div class="search_content">
@@ -297,6 +330,7 @@
                         <div class="time_limit_confirm">
                             <i style="font-size: 14px;color: #fff;margin-top: 7px" class="icon iconfont icon-search-"></i>&nbsp;&nbsp;重新搜索
                         </div>
+
                     </div>
                     <div class="line_fc"></div>
                     <div class="tables">
@@ -317,7 +351,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style="text-align: right;width: 50px"><Radio style="color: #D75E5B;"></Radio></td>
+                                    <td style="text-align: right;width: 50px">
+                                        <Radio style="color: #D75E5B!important;"></Radio>
+                                    </td>
                                     <td style="width: 80px">123456</td>
                                     <td style="font-size: 12px">123456</td>
                                     <td style="font-size: 12px;">123456</td>
@@ -326,7 +362,7 @@
                                     <td>123456</td>
                                     <td style="color: #E6655F">839 <i style="transform: rotate(-180deg);color: #E6655F;font-size: 8px" class="icon iconfont icon-down-"></i></td>
                                     <td style="color: #7FC765">839 <i style="transform: rotate(-180deg);color: #7FC765;font-size: 8px" class="icon iconfont icon-down-"></i></td>
-                                    <td  @click="click_alert()"><i style="font-size: 20px;color: rgb(204,204,204)" class="icon iconfont icon-baogao-"></i></td>
+                                    <td style="cursor: pointer" @click="click_alert()"><i style="font-size: 20px;color: rgb(204,204,204)" class="icon iconfont icon-baogao-"></i></td>
                                 </tr>
                                 <tr>
                                     <td style="text-align: right;width: 50px"><Radio style="color: #D75E5B;"></Radio></td>
@@ -338,28 +374,37 @@
                                     <td>123456</td>
                                     <td style="color: #E6655F">839 <i style="transform: rotate(-180deg);color: #E6655F;font-size: 8px" class="icon iconfont icon-down-"></i></td>
                                     <td style="color: #7FC765">839 <i style="transform: rotate(-180deg);color: #7FC765;font-size: 8px" class="icon iconfont icon-down-"></i></td>
-                                    <td @click="click_alert()"><i style="font-size: 20px;color: rgb(204,204,204)" class="icon iconfont icon-baogao-"></i></td>
+                                    <td style="cursor: pointer" @click="click_alert()"><i style="font-size: 20px;color: rgb(204,204,204)" class="icon iconfont icon-baogao-"></i></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
                     <div class="buton_choise">
-                        <div class="btin">
+
+                        <Button @click="view_caht()" class="btin" type="primary" shape="circle">
                             <i style="font-size: 22px;color: #D8D8D8;" class="icon iconfont icon-tubiao-"></i>&nbsp;&nbsp;
                             <span>按图标展示</span>
-                        </div>
-                        &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;
-                        <div class="btin">
+                        </Button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <Button @click="pai_ming()" class="btin" type="primary" shape="circle">
                             <i style="font-size: 22px;color: #D8D8D8;" class="icon iconfont icon-ranking-"></i>&nbsp;&nbsp;
                             <span>查看排名</span>
-                        </div>
+                        </Button>
                     </div>
                 </div>
 
             </div>
         </div>
 
+        <div class="box_logo_bottom">
+            <div class="xu_ni_new"></div>
+            <img height="30" src="../images/mindfrog.png" alt="">
+
+            <span>
+                &nbsp;&nbsp;&nbsp;&nbsp;Copyright © Mindfrog All rights reserved
+            </span>
+        </div>
         <!--弹框-->
         <Modal
                 v-model="modal6"
@@ -508,6 +553,12 @@
             },
             click_alert(){
                 this.modal6 = true
+            },
+            view_caht(){
+                this.$router.push({ name: 'echart', params: { userId: 123 }})
+            },
+            pai_ming(){
+                this.$router.push({ name: 'sort', params: { userId: 123 }})
             }
         }
     }

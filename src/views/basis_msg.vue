@@ -46,7 +46,6 @@
                 border-radius: 50%;
                 width: 80px;
                 height: 80px;
-                box-shadow:0 0 10px #000;
             }
         }
         .box_content{
@@ -135,7 +134,10 @@
             </div>
             <br>
             <Row>
-                <Col class="name_large" span="24">张学友</Col>
+                <Col class="name_large" span="24">
+                张学友
+                <i style="font-size: 14px;color: rgb(110,121,238)" class="icon iconfont icon-man-"></i>
+                </Col>
             </Row>
             <br>
             <br>
@@ -206,7 +208,8 @@
             </div>
             <div class="tops_title tops_title_fixed">
                 <div class="tops_title_one">
-                    <i style="font-size: 40px;margin-left: 10px" class="icon iconfont icon-danao---"></i>
+                    <!--<i style="font-size: 40px;margin-left: 10px" class="icon iconfont icon-danao-&#45;&#45;"></i>-->
+                    <img  height="40" width="40" src="../images/danao-2-01-01.png" alt="">
                     <div class="diatitle">
                         <div class="titles">
                             脑认知数据平台

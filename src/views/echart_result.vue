@@ -82,6 +82,14 @@
                 </div>
             </div>
         </div>
+        <div class="box_logo_bottom">
+            <div class="xu_ni_new"></div>
+            <img height="30" src="../images/mindfrog.png" alt="">
+
+            <span>
+                &nbsp;&nbsp;&nbsp;&nbsp;Copyright © Mindfrog All rights reserved
+            </span>
+        </div>
     </div>
 </template>
 

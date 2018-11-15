@@ -1,6 +1,7 @@
 const routers = [
     {
-        path: '/',
+        path: '/index',
+        name:'index',
         meta: {
             title: ''
         },
@@ -8,6 +9,7 @@ const routers = [
     },
     {
         path: '/search',
+        name:'search',
         meta: {
             title: ''
         },
@@ -15,20 +17,23 @@ const routers = [
     },
     {
         path: '/echart',
+        name:'echart',
         meta: {
             title: ''
         },
         component: (resolve) => require(['./views/echart_result.vue'], resolve)
     },
     {
-        path: '/login',
+        path: '/',
+        name:'login',
         meta: {
             title: ''
         },
         component: (resolve) => require(['./views/login.vue'], resolve)
     },
     {
-        path: '/search_show',
+        path: '/date',
+        name:'date',
         meta: {
             title: ''
         },
@@ -36,6 +41,7 @@ const routers = [
     },
     {
         path: '/sort',
+        name:'sort',
         meta: {
             title: ''
         },

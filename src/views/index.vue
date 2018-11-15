@@ -6,7 +6,7 @@
     .index_all{
         .contents_detail{
             width: 84%;
-            background: #FFFFFF;
+            background: #FAFAFA;
             .title_tagss{
                 height: 50px;
                 background: #FFFFFF;
@@ -23,7 +23,7 @@
                     position: absolute;
                 }
                 .postitao_ctr{
-                    width: 100%;
+                    width: 84%;
                     text-align: center;
                     .center_tlt{
                         font-family: PingFangSC-Regular;
@@ -35,9 +35,9 @@
             }
             .title{
                 margin: 10px;
-                background-color: #FFFFFF;
+                background: #FAFAFA;
                 .box_centr{
-                    background-color: #FFFFFF;
+                    background: #FAFAFA;
                     .box_ant{
                         border-radius: 6px;
                         height: 260px;
@@ -124,9 +124,24 @@
     }
     .xu_ni{
         width: 16%;
-        height: 900px;
+        height: 860px!important;
     }
 
+
+    .box_logo_bottom{
+        display: flex;
+        font-family: PingFangSC-Regular;
+        font-size: 12px;
+        color: #A4A0A2;
+        letter-spacing: 0.67px;
+        line-height: 30px;
+        margin-left: 30px;
+        padding-bottom: 30px;
+        background: #FAFAFA;
+        .xu_ni_new{
+            width: 16%;
+        }
+    }
 </style>
 <template>
     <div class="index_all">
@@ -156,7 +171,8 @@
                                     <span>VR产检</span>
                                 </div>
                                 <div class="naids">
-                                    <i style="font-size: 60px;color: #D8D8D8;" class="icon iconfont icon-fuchan-"></i>
+                                    <!--<i style="font-size: 60px;color: #D8D8D8;" class="icon iconfont icon-fuchan-"></i>-->
+                                    <img width="60" height="60" src="../images/fuchan-01.png" alt="">
                                 </div>
                             </div>
                             <div class="content_val_one">
@@ -172,7 +188,7 @@
                                 <div class="name_color">（未读）</div>
                             </div>
                             <div class="boxs_btns">
-                                <button class="click_btn">查看报告</button>
+                                <Button class="click_btn" @click="view_data()" type="primary" shape="circle">查看报告</Button>
                             </div>
                         </div>
                         </Col>
@@ -184,7 +200,8 @@
                                     <span>压力反应测试</span>
                                 </div>
                                 <div class="naids">
-                                    <i style="font-size: 60px;color: #D8D8D8;" class="icon iconfont icon-fanying-"></i>
+                                    <!--<i style="font-size: 60px;color: #D8D8D8;" class="icon iconfont icon-fanying-"></i>-->
+                                    <img width="60" height="60" src="../images/fanying-01.png" alt="">
                                 </div>
                             </div>
                             <div class="content_val_one">
@@ -200,7 +217,7 @@
                                 <div class="name_color">（未读）</div>
                             </div>
                             <div class="boxs_btns">
-                                <button class="click_btn">查看报告</button>
+                                <Button class="click_btn" @click="view_data()" type="primary" shape="circle">查看报告</Button>
                             </div>
                         </div>
                         </Col>
@@ -212,7 +229,8 @@
                                     <span>VR体能测试</span>
                                 </div>
                                 <div class="naids">
-                                    <i style="font-size: 60px;color: #D8D8D8;" class="icon iconfont icon-tinengceshi-"></i>
+                                    <!--<i style="font-size: 60px;color: #D8D8D8;" class="icon iconfont icon-tinengceshi-"></i>-->
+                                    <img width="60" height="60" src="../images/tinengceshi-01.png" alt="">
                                 </div>
                             </div>
                             <div class="content_val_one">
@@ -228,13 +246,22 @@
                                 <div class="name_color">（未读）</div>
                             </div>
                             <div class="boxs_btns">
-                                <button class="click_btn">查看报告</button>
+                                <Button class="click_btn" @click="view_data()" type="primary" shape="circle">查看报告</Button>
                             </div>
                         </div>
                         </Col>
                     </Row>
                 </div>
             </div>
+        </div>
+
+        <div class="box_logo_bottom">
+            <div class="xu_ni_new"></div>
+            <img height="30" src="../images/mindfrog.png" alt="">
+
+            <span>
+                &nbsp;&nbsp;&nbsp;&nbsp;Copyright © Mindfrog All rights reserved
+            </span>
         </div>
     </div>
 </template>
@@ -253,6 +280,9 @@
         methods:{
             exit(){
 
+            },
+            view_data(){
+                this.$router.push({ name: 'search', params: { userId: 123 }})
             }
         }
     }
