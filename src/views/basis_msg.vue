@@ -13,7 +13,7 @@
             top: 64px;
             background: #F5F5F5;
             box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
-            padding: 0 20px;
+            padding: 0 25px;
             font-family: HelveticaNeue-Medium;
             font-size: 12px;
             color: #4E5056;

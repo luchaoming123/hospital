@@ -79,7 +79,6 @@
                             }
                             .naids{
                                 position: relative;
-                                top:-15px;
                             }
 
                         }

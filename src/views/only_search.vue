@@ -151,6 +151,10 @@
         },
         mounted(){
             $('.el-date-editor ').click();
+            //删除没用的图标
+            setTimeout(function () {
+                $(".popper__arrow").remove();
+            },300)
         },
         methods:{
             exit(){
@@ -159,7 +163,6 @@
             date_change(e){
                 console.log(this.value6);
                 $('.el-date-editor ').click();
-
                 let start_time=this.value6[0];
                 let end_time=this.value6[1];
 
@@ -222,9 +225,14 @@
                         break;
                 }
                 this.end_time=y_+'-'+m_+'-'+d_+'  '+'星期'+ds_;
+
+                //删除没用的图标
+                $(".popper__arrow").remove();
             },
             date_change_two(){
                 $('.el-date-editor ').click();
+                //删除没用的图标
+                $(".popper__arrow").remove();
             },
             search_list(){
                 this.$router.push({ name: 'index', params: { userId: 123 }})

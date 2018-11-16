@@ -149,8 +149,7 @@
                             }
                         }
                     .naids{
-                        position: relative;
-                        top:-15px;
+                        position: relative
                     }
 
                 }
@@ -266,6 +265,14 @@
         }
     }
 
+    .butoton_box_ld{
+        font-family: PingFangSC-Medium;
+        font-size: 14px;
+        color: #E6655F!important;
+        position: relative;
+        bottom: 2px;
+        left: 5px;
+    }
 
     .ivu-date-picker-cells-cell-selected:hover em, .ivu-date-picker-cells-cell-selected em{
         background-color: #E6655F!important;
@@ -410,7 +417,6 @@
                 v-model="modal6"
                 title="报告编号：13251"
                 :loading="loading"
-                fullscreen
                 @on-ok="asyncOK" width="1200">
                 <div class="alert_css">
                     <div class="titles">
@@ -481,8 +487,8 @@
 
             <div slot="footer" style="text-align: center;margin: 10px 0 20px 0">
                 <div class="butoton_box">
-                    <Button shape="circle" style="width: 140px"><i style="font-size: 20px;color: #D8D8D8;" class="icon iconfont icon-export-"></i> 导出</Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Button shape="circle" style="width: 140px"><i style="font-size: 20px;color: #D8D8D8;" class="icon iconfont icon-print-"></i> 打印</Button>
+                    <Button shape="circle" style="width: 140px"><i style="font-size: 20px;color: #D8D8D8;" class="icon iconfont icon-export-"></i><span class="butoton_box_ld">导出</span></Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <Button shape="circle" style="width: 140px"><i style="font-size: 20px;color: #D8D8D8;" class="icon iconfont icon-print-"></i><span class="butoton_box_ld">打印</span></Button>
                 </div>
 
             </div>
@@ -491,6 +497,7 @@
 </template>
 
 <script>
+    import $ from 'jquery'
     import baisis_msg from './basis_msg.vue'
     export default {
         data () {
@@ -541,6 +548,13 @@
         },
         components:{
             baisis_msg
+        },
+        mounted(){
+          $(".ivu-modal-header-inner").css({
+                'font-family': 'PingFangSC-Medium',
+                'font-size': '18px',
+                'color': '#000000'
+          });
         },
         methods:{
             exit(){
