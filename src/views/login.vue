@@ -64,13 +64,11 @@
                     height: 48px!important;
                     width: 380px;
 
-                    ont-family: PingFangSC-Regular;
+                    font-family: PingFangSC-Regular;
                     font-size: 16px;
                     color: #4E5056;
                     line-height: 14px;
-                }
-                .input_class:hover{
-                    border-color: #E6655F!important;
+                    padding: 10px;
                 }
                 .input_class:focus{
                     border-color: #E6655F!important;
@@ -129,6 +127,10 @@
             line-height: 30px;
         }
     }
+
+    input:focus{
+        border: 1px solid #E6655F!important;
+    }
 </style>
 <template>
     <div class="login_on">
@@ -174,6 +176,9 @@
             }
         },
         components:{
+
+        },
+        mounted(){
 
         },
         methods:{

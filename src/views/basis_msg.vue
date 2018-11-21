@@ -220,7 +220,7 @@
                             脑认知数据平台
                         </div>
                         <div class="titles_alias">
-                            BRAIN COGNITIVE DATA PLATFORM
+                            Brain cognitive data platfrom
                         </div>
                     </div>
                 </div>

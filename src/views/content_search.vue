@@ -293,14 +293,38 @@
         box-shadow: none!important;
     }
 
-    button:hover,input:hover{
+    button:hover{
         border-color: #E6655F!important;
     }
-    button:focus,input:focus{
+
+    button:focus{
         border-color: #E6655F!important;
     }
-    button:visited,input:visited{
+    button:visited{
         border:1px solid #E6655F!important;
+    }
+
+    input:hover{
+        background: #FBFBFB!important;
+        border: 1px solid #A4A0A2!important;
+        border-radius: 2px!important;
+    }
+    input:focus{
+        background: #FBFBFB!important;
+        border: 1px solid #E6655F!important;
+        border-radius: 2px!important;
+     }
+    input:visited{
+        border:1px solid #E6655F!important;
+    }
+
+
+    .ivu-date-picker-cells-cell-range:before{
+        background: #f3f6fb!important;
+    }
+
+    input:focus,button:active{
+        outline:none!important;
     }
 </style>
 <template>
@@ -390,13 +414,13 @@
                     <div class="buton_choise">
 
                         <Button @click="view_caht()" class="btin" type="primary" shape="circle">
-                            <i style="font-size: 22px;color: #D8D8D8;" class="icon iconfont icon-tubiao-"></i>&nbsp;&nbsp;
-                            <span>按图标展示</span>
+                            <img src="../images/tubiao-01.png" style="position: relative;top: 2px" height="22" alt="">
+                            &nbsp;&nbsp;<span>按图标展示</span>
                         </Button>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <Button @click="pai_ming()" class="btin" type="primary" shape="circle">
-                            <i style="font-size: 22px;color: #D8D8D8;" class="icon iconfont icon-ranking-"></i>&nbsp;&nbsp;
-                            <span>查看排名</span>
+                            <img src="../images/ranking-01.png" style="position: relative;top: 2px" height="22" alt="">
+                            &nbsp;&nbsp;<span>查看排名</span>
                         </Button>
                     </div>
                 </div>
