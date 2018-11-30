@@ -93,7 +93,7 @@
             </div>
         </div>
         <div class="mobile_phone">
-            <basis_msg_mobile title_value=">报告编号：129825"></basis_msg_mobile>
+            <basis_msg_mobile title_value="报告编号：129825"></basis_msg_mobile>
             <div class="pad_10" id="main_mobile_one" style="height: 300px;"></div>
         </div>
     </div>
