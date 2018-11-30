@@ -1,8 +1,5 @@
 <style scope>
-    body{
-        background: #FAFAFA;
-        background-image: none!important;
-    }
+
     .index_all{
         .contents_detail{
             width: 84%;
@@ -141,132 +138,316 @@
             width: 16%;
         }
     }
+
+
+    .index_for_mobile{
+        .box_for_item{
+            background: #FFFFFF;
+            border: 1px solid #ECECEC;
+            box-shadow: 0 4px 4px 0 rgba(34,44,75,0.10);
+            margin:  20px 20px 0 20px;
+            padding: 10px 15px;
+            .box_one{
+                display: flex;
+                justify-content: space-between;
+                .title_vr_left{
+                    display: flex;
+                    .title_vr{
+                        font-family: PingFangSC-Medium;
+                        font-size: 14px;
+                        color: #000000;
+                    }
+                    .line_left{
+                        width: 2px;
+                        height: 10px;
+                        background: #E6655F;
+                        position: relative;
+                        left: -15px;
+                        top: 6px;
+                    }
+                }
+            }
+            .box_two{
+                margin: 10px 0 15px 0;
+                display: flex;
+                justify-content: space-between;
+                .box_two_left{
+                    display: flex;
+                    .box_num_name{
+                        font-family: PingFangSC-Regular;
+                        font-size: 11px;
+                        color: #9B9B9B;
+                        line-height: 7px;
+                    }
+                    .box_num{
+                        font-family: HelveticaNeue;
+                        font-size: 11px;
+                        color: #000000;
+                        line-height: 7px;
+                    }
+                }
+                .box_two_center{
+                    display: flex;
+                    .box_num_name{
+                        font-family: PingFangSC-Regular;
+                        font-size: 11px;
+                        color: #9B9B9B;
+                        line-height: 7px;
+                    }
+                }
+                .box_two_right{
+                    display: flex;
+                    .time{
+                        font-family: HelveticaNeue;
+                        font-size: 11px;
+                        color: #000000;
+                        line-height: 7px;
+                    }
+                    .if_read{
+                        font-family: PingFangSC-Regular;
+                        font-size: 11px;
+                        color: #E6655F;
+                        line-height: 7px;
+                    }
+                }
+            }
+            .box_three{
+                background: #FFFFFF;
+                border: 1px solid #E7E7E7;
+                border-radius: 15px;
+                width: 100%;
+                height: 30px;
+                font-family: PingFangSC-Medium;
+                font-size: 12px;
+                color: #E6655F;
+                cursor: pointer;
+                text-align: center;
+                line-height: 30px;
+            }
+        }
+    }
 </style>
 <template>
-    <div class="index_all">
-        <baisis_msg></baisis_msg>
+    <div>
+        <div class="index_all computer">
+            <baisis_msg></baisis_msg>
 
-        <div class="box_flowing">
-            <div class="xu_ni"></div>
-            <div class="contents_detail">
-                <div class="title_tagss">
-                    <div class="postitaons">
-                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
+            <div class="box_flowing">
+                <div class="xu_ni"></div>
+                <div class="contents_detail">
+                    <div class="title_tagss">
+                        <div class="postitaons">
+                            <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
 
-                        <span>首页</span>
+                            <span>首页</span>
+                        </div>
+                        <div class="postitao_ctr">
+                            <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-remind-"></i>
+                            <span class="center_tlt">请选择测试项目</span>
+                        </div>
                     </div>
-                    <div class="postitao_ctr">
-                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-remind-"></i>
-                        <span class="center_tlt">请选择测试项目</span>
+                    <div class="title" style="background: #f8f8f9">
+                        <Row class="box_centr">
+                            <Col span="8">
+                            <div class="box_ant" shadow>
+                                <div class="title_name">
+                                    <div class="tsts">
+                                        <div class="line_col"></div>
+                                        <span>VR产检</span>
+                                    </div>
+                                    <div class="naids">
+                                        <!--<i style="font-size: 60px;color: #D8D8D8;" class="icon iconfont icon-fuchan-"></i>-->
+                                        <img width="60" height="60" src="../images/fuchan-01.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="content_val_one">
+                                    <i style="font-size: 16px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-baogao-"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div class="name">报告数量：</div>
+                                    <div class="values">12</div>
+                                </div>
+                                <br>
+                                <div class="content_val_two">
+                                    <i style="font-size: 16px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-zuixin-"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div class="name">最新报告：</div>
+                                    <div class="values">2016-10-10</div>
+                                    <div class="name_color">（未读）</div>
+                                </div>
+                                <div class="boxs_btns">
+                                    <Button class="click_btn" @click="view_data()" type="primary" shape="circle">查看报告</Button>
+                                </div>
+                            </div>
+                            </Col>
+                            <Col span="8">
+                            <div class="box_ant" shadow>
+                                <div class="title_name">
+                                    <div class="tsts">
+                                        <div class="line_col"></div>
+                                        <span>压力反应测试</span>
+                                    </div>
+                                    <div class="naids">
+                                        <!--<i style="font-size: 60px;color: #D8D8D8;" class="icon iconfont icon-fanying-"></i>-->
+                                        <img width="60" height="60" src="../images/fanying-01.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="content_val_one">
+                                    <i style="font-size: 16px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-baogao-"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div class="name">报告数量：</div>
+                                    <div class="values">12</div>
+                                </div>
+                                <br>
+                                <div class="content_val_two">
+                                    <i style="font-size: 16px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-zuixin-"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div class="name">最新报告：</div>
+                                    <div class="values">2016-10-10</div>
+                                    <div class="name_color">（未读）</div>
+                                </div>
+                                <div class="boxs_btns">
+                                    <Button class="click_btn" @click="view_data()" type="primary" shape="circle">查看报告</Button>
+                                </div>
+                            </div>
+                            </Col>
+                            <Col span="8">
+                            <div class="box_ant" shadow>
+                                <div class="title_name">
+                                    <div class="tsts">
+                                        <div class="line_col"></div>
+                                        <span>VR体能测试</span>
+                                    </div>
+                                    <div class="naids">
+                                        <!--<i style="font-size: 60px;color: #D8D8D8;" class="icon iconfont icon-tinengceshi-"></i>-->
+                                        <img width="60" height="60" src="../images/tinengceshi-01.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="content_val_one">
+                                    <i style="font-size: 16px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-baogao-"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div class="name">报告数量：</div>
+                                    <div class="values">12</div>
+                                </div>
+                                <br>
+                                <div class="content_val_two">
+                                    <i style="font-size: 16px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-zuixin-"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div class="name">最新报告：</div>
+                                    <div class="values">2016-10-10</div>
+                                    <div class="name_color">（未读）</div>
+                                </div>
+                                <div class="boxs_btns">
+                                    <Button class="click_btn" @click="view_data()" type="primary" shape="circle">查看报告</Button>
+                                </div>
+                            </div>
+                            </Col>
+                        </Row>
                     </div>
-                </div>
-                <div class="title" style="background: #f8f8f9">
-                    <Row class="box_centr">
-                        <Col span="8">
-                        <div class="box_ant" shadow>
-                            <div class="title_name">
-                                <div class="tsts">
-                                    <div class="line_col"></div>
-                                    <span>VR产检</span>
-                                </div>
-                                <div class="naids">
-                                    <!--<i style="font-size: 60px;color: #D8D8D8;" class="icon iconfont icon-fuchan-"></i>-->
-                                    <img width="60" height="60" src="../images/fuchan-01.png" alt="">
-                                </div>
-                            </div>
-                            <div class="content_val_one">
-                                <i style="font-size: 16px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-baogao-"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <div class="name">报告数量：</div>
-                                <div class="values">12</div>
-                            </div>
-                            <br>
-                            <div class="content_val_two">
-                                <i style="font-size: 16px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-zuixin-"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <div class="name">最新报告：</div>
-                                <div class="values">2016-10-10</div>
-                                <div class="name_color">（未读）</div>
-                            </div>
-                            <div class="boxs_btns">
-                                <Button class="click_btn" @click="view_data()" type="primary" shape="circle">查看报告</Button>
-                            </div>
-                        </div>
-                        </Col>
-                        <Col span="8">
-                        <div class="box_ant" shadow>
-                            <div class="title_name">
-                                <div class="tsts">
-                                    <div class="line_col"></div>
-                                    <span>压力反应测试</span>
-                                </div>
-                                <div class="naids">
-                                    <!--<i style="font-size: 60px;color: #D8D8D8;" class="icon iconfont icon-fanying-"></i>-->
-                                    <img width="60" height="60" src="../images/fanying-01.png" alt="">
-                                </div>
-                            </div>
-                            <div class="content_val_one">
-                                <i style="font-size: 16px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-baogao-"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <div class="name">报告数量：</div>
-                                <div class="values">12</div>
-                            </div>
-                            <br>
-                            <div class="content_val_two">
-                                <i style="font-size: 16px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-zuixin-"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <div class="name">最新报告：</div>
-                                <div class="values">2016-10-10</div>
-                                <div class="name_color">（未读）</div>
-                            </div>
-                            <div class="boxs_btns">
-                                <Button class="click_btn" @click="view_data()" type="primary" shape="circle">查看报告</Button>
-                            </div>
-                        </div>
-                        </Col>
-                        <Col span="8">
-                        <div class="box_ant" shadow>
-                            <div class="title_name">
-                                <div class="tsts">
-                                    <div class="line_col"></div>
-                                    <span>VR体能测试</span>
-                                </div>
-                                <div class="naids">
-                                    <!--<i style="font-size: 60px;color: #D8D8D8;" class="icon iconfont icon-tinengceshi-"></i>-->
-                                    <img width="60" height="60" src="../images/tinengceshi-01.png" alt="">
-                                </div>
-                            </div>
-                            <div class="content_val_one">
-                                <i style="font-size: 16px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-baogao-"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <div class="name">报告数量：</div>
-                                <div class="values">12</div>
-                            </div>
-                            <br>
-                            <div class="content_val_two">
-                                <i style="font-size: 16px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-zuixin-"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <div class="name">最新报告：</div>
-                                <div class="values">2016-10-10</div>
-                                <div class="name_color">（未读）</div>
-                            </div>
-                            <div class="boxs_btns">
-                                <Button class="click_btn" @click="view_data()" type="primary" shape="circle">查看报告</Button>
-                            </div>
-                        </div>
-                        </Col>
-                    </Row>
                 </div>
             </div>
-        </div>
 
-        <div class="box_logo_bottom">
-            <div class="xu_ni_new"></div>
-            <img height="30" src="../images/mindfrog.png" alt="">
+            <div class="box_logo_bottom">
+                <div class="xu_ni_new"></div>
+                <img height="30" src="../images/mindfrog.png" alt="">
 
-            <span>
+                <span>
                 &nbsp;&nbsp;&nbsp;&nbsp;Copyright © Mindfrog All rights reserved
             </span>
+            </div>
+        </div>
+        <div class="mobile_phone index_for_mobile">
+            <basis_msg_mobile title_value="请选择项目测试"></basis_msg_mobile>
+            <div class="box_for_item">
+                <div class="box_one">
+                    <div class="title_vr_left">
+                        <div class="line_left"></div>
+                        <div class="title_vr">VR产检</div>
+                    </div>
+                    <img width="30" height="30" src="../images/fuchan-01.png" alt="">
+                </div>
+                <div class="box_two">
+                    <div class="box_two_left">
+                        <i style="font-size: 10px;color: #D8D8D8;margin-top:-5px;" class="icon iconfont icon-baogao-"></i>&nbsp;
+
+                        <span class="box_num_name">报告数量</span>
+                        &nbsp;&nbsp;
+                        <span class="box_num">5</span>
+                    </div>
+                    <div class="box_two_center">
+                        <i style="font-size: 10px;color: #D8D8D8;margin-top:-5px;" class="icon iconfont icon-zuixin-"></i>&nbsp;
+                        <span class="box_num_name">最新报告</span>
+                    </div>
+                    <div class="box_two_right">
+                        <span class="time">2018-05-10</span>
+                        &nbsp;&nbsp;
+                        <span class="if_read">(未读)</span>
+                    </div>
+                </div>
+                <div class="box_three">
+                    查看报告
+                </div>
+            </div>
+            <div class="box_for_item">
+                <div class="box_one">
+                    <div class="title_vr_left">
+                        <div class="line_left"></div>
+                        <div class="title_vr">压力反应测试</div>
+                    </div>
+                    <img width="30" height="30" src="../images/fanying-01.png" alt="">
+                </div>
+                <div class="box_two">
+                    <div class="box_two_left">
+                        <i style="font-size: 10px;color: #D8D8D8;margin-top:-5px;" class="icon iconfont icon-baogao-"></i>&nbsp;
+
+                        <span class="box_num_name">报告数量</span>
+                        &nbsp;&nbsp;
+                        <span class="box_num">5</span>
+                    </div>
+                    <div class="box_two_center">
+                        <i style="font-size: 10px;color: #D8D8D8;margin-top:-5px;" class="icon iconfont icon-zuixin-"></i>&nbsp;
+                        <span class="box_num_name">最新报告</span>
+                    </div>
+                    <div class="box_two_right">
+                        <span class="time">2018-05-10</span>
+                        &nbsp;&nbsp;
+                        <span class="if_read">(未读)</span>
+                    </div>
+                </div>
+                <div class="box_three">
+                    查看报告
+                </div>
+            </div>
+            <div class="box_for_item">
+                <div class="box_one">
+                    <div class="title_vr_left">
+                        <div class="line_left"></div>
+                        <div class="title_vr">VR体能测试</div>
+                    </div>
+                    <img width="30" height="30" src="../images/tinengceshi-01.png" alt="">
+                </div>
+                <div class="box_two">
+                    <div class="box_two_left">
+                        <i style="font-size: 10px;color: #D8D8D8;margin-top:-5px;" class="icon iconfont icon-baogao-"></i>&nbsp;
+
+                        <span class="box_num_name">报告数量</span>
+                        &nbsp;&nbsp;
+                        <span class="box_num">5</span>
+                    </div>
+                    <div class="box_two_center">
+                        <i style="font-size: 10px;color: #D8D8D8;margin-top:-5px;" class="icon iconfont icon-zuixin-"></i>&nbsp;
+                        <span class="box_num_name">最新报告</span>
+                    </div>
+                    <div class="box_two_right">
+                        <span class="time">2018-05-10</span>
+                        &nbsp;&nbsp;
+                        <span class="if_read">(未读)</span>
+                    </div>
+                </div>
+                <div class="box_three">
+                    查看报告
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     import baisis_msg from './basis_msg.vue';
+    import basis_msg_mobile from './basis_msg_mobile.vue';
     export default {
         data () {
             return {
@@ -274,7 +455,8 @@
             }
         },
         components:{
-            baisis_msg
+            baisis_msg,
+            basis_msg_mobile
         },
         methods:{
             exit(){

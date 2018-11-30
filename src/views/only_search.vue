@@ -46,6 +46,55 @@
         }
     }
 
+
+    .only_search_for_mobile{
+        .box_range{
+            background: #FFFFFF;
+            border: 1px solid #E5E5E5;
+            display: flex;
+            padding: 15px;
+            flex-direction: column;
+            .time_select{
+                display: flex;
+                #class_one{
+                    background: #FBFBFB;
+                    border: 1px solid #EAEAEA;
+                    border-radius: 1.4px;
+                    width: 40%;
+                    height: 32px;
+                    text-align: center;
+                    line-height: 32px;
+                    cursor: pointer;
+                }
+                #class_two{
+                    background: #FBFBFB;
+                    border: 1px solid #EAEAEA;
+                    border-radius: 1.4px;
+                    width: 40%;
+                    height: 32px;
+                    text-align: center;
+                    line-height: 32px;
+                    cursor: pointer;
+                }
+                .search{
+                    background: #E6655F;
+                    border-radius: 42px;
+                    height: 32px;
+                    width: 44px;
+                    margin-left: 10px;
+                }
+            }
+            .title_f{
+                font-family: PingFangSC-Regular;
+                font-size: 12px;
+                color: #9B9B9B;
+                line-height: 10px;
+                margin-bottom: 10px;
+                display: flex;
+            }
+        }
+    }
+
     .box_flowing{
         display: flex;
     }
@@ -67,70 +116,89 @@
     }
 </style>
 <template>
-    <div class="search_only">
-        <baisis_msg></baisis_msg>
-        <div class="detail_show">
-            <div class="xu_ni"></div>
-            <div class="contents_detail">
-                <div class="title_tagss">
-                    <div class="postitaons">
-                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
+    <div>
+        <div class="search_only computer">
+            <baisis_msg></baisis_msg>
+            <div class="detail_show">
+                <div class="xu_ni"></div>
+                <div class="contents_detail">
+                    <div class="title_tagss">
+                        <div class="postitaons">
+                            <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
 
-                        <span>首页</span>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
+                            <span>首页</span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
 
-                        <span>压力反应测试</span>
+                            <span>压力反应测试</span>
+                        </div>
+                        <div class="postitao_ctr">
+                            <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-remind-"></i>
+                            <span class="center_tlt">请选择送检时间范围</span>
+                        </div>
                     </div>
-                    <div class="postitao_ctr">
-                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-remind-"></i>
-                        <span class="center_tlt">请选择送检时间范围</span>
+                    <div class="title" style="background: #f8f8f9">
+                        <div class="input_show">
+                            <div class="shadow_display_none"></div>
+                            <el-date-picker
+                                    v-model="value6"
+                                    type="daterange"
+                                    format="yyyy-MM-dd "
+                                    @change="date_change()"
+                                    @blur="date_change_two()"
+                                    style="position: relative"
+                            >
+                            </el-date-picker>
+
+                            <div class="box_data">
+                                <div style="width: 320px">
+                                    <i style="font-size: 14px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-time-"></i>
+                                    &nbsp;&nbsp;
+                                    <span>开始时间：</span>
+                                    <span>{{start_time}}</span>
+                                </div>
+                                <div>
+                                    <i style="font-size: 14px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-time-"></i>
+                                    &nbsp;&nbsp;
+                                    <span>结束时间：</span>
+                                    <span>{{end_time}}</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="time_limit_confirm">
+                            <Button class="button_click" style="" v-on:click="search_list()" type="primary" shape="circle">开始查询</Button>
+                        </div>
                     </div>
                 </div>
-                <div class="title" style="background: #f8f8f9">
-                    <div class="input_show">
-                        <div class="shadow_display_none"></div>
-                        <el-date-picker
-                                v-model="value6"
-                                type="daterange"
-                                format="yyyy-MM-dd "
-                                @change="date_change()"
-                                @blur="date_change_two()"
-                                style="position: relative"
-                        >
-                        </el-date-picker>
 
-                        <div class="box_data">
-                            <div style="width: 320px">
-                               <i style="font-size: 14px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-time-"></i>
-                                &nbsp;&nbsp;
-                                <span>开始时间：</span>
-                                <span>{{start_time}}</span>
-                            </div>
-                            <div>
-                                <i style="font-size: 14px;color: #D8D8D8;margin-top:-4px;" class="icon iconfont icon-time-"></i>
-                                &nbsp;&nbsp;
-                                <span>结束时间：</span>
-                                <span>{{end_time}}</span>
-                            </div>
-                        </div>
+            </div>
 
-                    </div>
-                    <div class="time_limit_confirm">
-                        <Button class="button_click" style="" v-on:click="search_list()" type="primary" shape="circle">开始查询</Button>
+            <div class="box_logo_bottom">
+                <div class="xu_ni_new"></div>
+                <img height="30" src="../images/mindfrog.png" alt="">
+
+                <span>
+                &nbsp;&nbsp;&nbsp;&nbsp;Copyright © Mindfrog All rights reserved
+            </span>
+            </div>
+        </div>
+        <div class="mobile_phone only_search_for_mobile">
+            <basis_msg_mobile title_value="请选择送检时间范围"></basis_msg_mobile>
+            <div class="box_range">
+                <div class="title_f">
+                    <i style="font-size: 4px;color: #D8D8D8;" class="icon iconfont icon-remind-"></i>&nbsp;&nbsp;
+                    <span>送检时间</span>
+                </div>
+                <div class="time_select">
+                    <div id="class_one">开始时间</div>
+                    <div style="margin: 5px 10px 0 10px">-</div>
+                    <div id="class_two">结束时间</div>
+                    <div class="search" @click="search_list()">
+                        <i style="font-size: 14px;color: #ffffff;position: relative;top: 6px;left: 15px" class="icon iconfont icon-search-"></i>
                     </div>
                 </div>
             </div>
-
-        </div>
-
-        <div class="box_logo_bottom">
-            <div class="xu_ni_new"></div>
-            <img height="30" src="../images/mindfrog.png" alt="">
-
-            <span>
-                &nbsp;&nbsp;&nbsp;&nbsp;Copyright © Mindfrog All rights reserved
-            </span>
         </div>
     </div>
 </template>
@@ -138,6 +206,9 @@
 <script>
     import $ from 'jquery'
     import baisis_msg from './basis_msg.vue'
+    import basis_msg_mobile from './basis_msg_mobile.vue';
+    import MobileSelect from 'mobile-select';
+    import date from '../template/date.js';
     export default {
         data () {
             return {
@@ -147,14 +218,38 @@
             }
         },
         components:{
-            baisis_msg
+            baisis_msg,
+            basis_msg_mobile
         },
         mounted(){
             $('.el-date-editor ').click();
             //删除没用的图标
             setTimeout(function () {
                 $(".popper__arrow").remove();
-            },300)
+            },300);
+
+            new MobileSelect({
+                trigger: "#class_one",
+                title: '开始时间',
+                wheels: [
+                    {data:date.date()}
+                ],
+                position:[0,1],
+                callback:function(indexArr, data){
+                    console.log(data); //返回选中的json数据
+                }
+            });
+            new MobileSelect({
+                trigger: "#class_two",
+                title: '结束时间',
+                wheels: [
+                    {data:date.date()}
+                ],
+                position:[0,1],
+                callback:function(indexArr, data){
+                    console.log(data); //返回选中的json数据
+                }
+            });
         },
         methods:{
             exit(){

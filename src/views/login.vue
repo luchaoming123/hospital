@@ -1,6 +1,60 @@
 <style scope>
     @import "../font/demo.css";
     @import "../font/iconfont.css";
+
+    /*适配移动端*/
+    @media only screen and (max-width: 900px) {
+        .computer {
+            display: none!important;
+        }
+        .mobile_phone{
+            display: block!important;
+        }
+        .el-picker-panel{
+            display: none!important;
+        }
+        .login_on{
+            margin:0 20px!important;
+            .form{
+                width: 100%!important;
+                margin: 35px 0!important;
+                height: 200px!important;
+                .title_remind{
+                    width: 100%!important;
+                }
+                .input_val{
+                    width: 100%!important;
+                    .input_class{
+                        width: 100%!important;
+                        height: 36px!important;
+                    }
+                }
+                .button_clil{
+                    width: 100%!important;
+                    .button_clil_button{
+                        width: 100%!important;
+                    }
+                }
+            }
+            .navigation{
+                bottom: 25px!important;
+                font-size: 6px!important;
+                letter-spacing: 0.3px!important;
+                line-height: normal!important;
+                img{
+                    height: 20px!important;
+                }
+
+            }
+        }
+
+        .fixWidth .title{
+            margin-top: 5px!important;
+        }
+    }
+    .mobile_phone{
+        display: none;
+    }
     body{
         background-image: url("../images/bg_login.png") !important;
     }
@@ -61,7 +115,7 @@
                     background: #FBFBFB;
                     border: 1px solid #EAEAEA;
                     border-radius: 2px;
-                    height: 48px!important;
+                    height: 48px;
                     width: 380px;
 
                     font-family: PingFangSC-Regular;
@@ -128,40 +182,44 @@
         }
     }
 
+
+
     input:focus{
         border: 1px solid #E6655F!important;
     }
 </style>
 <template>
-    <div class="login_on">
-        <div class="logo_">
-            <!--<i style="font-size: 100px;" class="icon iconfont icon-danao-&#45;&#45;"></i>-->
-            <img  height="100" width="100" style="margin: 0 auto" src="../images/danao-2-01-01.png" alt="">
-            <div class="logo_name">
-                脑认知数据平台
+    <div>
+        <div class="login_on">
+            <div class="logo_">
+                <!--<i style="font-size: 100px;" class="icon iconfont icon-danao-&#45;&#45;"></i>-->
+                <img  height="100" width="100" style="margin: 0 auto" src="../images/danao-2-01-01.png" alt="">
+                <div class="logo_name">
+                    脑认知数据平台
+                </div>
+                <div class="logo_words">
+                    BRAIN COGNITIVE DATA PLATFORM
+                </div>
             </div>
-            <div class="logo_words">
-                BRAIN COGNITIVE DATA PLATFORM
+            <div class="form">
+                <div class="title_remind" >
+                    <i style="font-size: 20px;position: relative;top: 2px;color: #D8D8D8;" class="icon iconfont icon-zhanghao-"></i>
+                    &nbsp;&nbsp;请输入用户编号：
+                </div>
+                <div class="input_val">
+                    <input type="text" v-model="value_num" class="input_class" style="height: 48px">
+                </div>
+                <div class="button_clil">
+                    <Button class="button_clil_button" @click="login_submit()" type="primary" shape="circle">开始查询</Button>
+                </div>
             </div>
-        </div>
-        <div class="form">
-            <div class="title_remind" >
-                <i style="font-size: 20px;position: relative;top: 2px;color: #D8D8D8;" class="icon iconfont icon-zhanghao-"></i>
-                &nbsp;&nbsp;请输入用户编号：
-            </div>
-            <div class="input_val">
-                <input type="text" v-model="value_num" class="input_class">
-            </div>
-            <div class="button_clil">
-                <Button class="button_clil_button" @click="login_submit()" type="primary" shape="circle">开始查询</Button>
-            </div>
-        </div>
-        <div class="navigation">
-            <img height="30" src="../images/mindfrog.png" alt="">
+            <div class="navigation">
+                <img height="30" src="../images/mindfrog.png" alt="">
 
-            <span>
+                <span>
                 &nbsp;&nbsp;&nbsp;&nbsp;Copyright © Mindfrog All rights reserved
-            </span>
+                </span>
+            </div>
         </div>
     </div>
 </template>

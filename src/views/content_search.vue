@@ -265,6 +265,33 @@
         }
     }
 
+    .content_search_for_mobile{
+        .table_css  {
+            margin-top: 10px;
+            .tr_for_tab{
+                width: 100%;
+                background: #FFFFFF;
+                border: 1px solid #E5E5E5;
+                font-family: PingFangSC-Regular;
+                font-size: 11px;
+                color: #9B9B9B;
+                height: 35px;
+            }
+            tr{
+                font-family: PingFangSC-Regular;
+                font-size: 9px;
+                color: #4E5056;
+                border-bottom: 1px solid #ECECEC;;
+                height: 42px;
+                background: rgb(255,255,255);
+                text-align: center;
+            }
+            tr:hover{
+                background: #EEEEEE;
+            }
+        }
+    }
+
     .butoton_box_ld{
         font-family: PingFangSC-Medium;
         font-size: 14px;
@@ -328,45 +355,46 @@
     }
 </style>
 <template>
-    <div class="search_content">
-        <baisis_msg></baisis_msg>
-        <div class="detail_show">
-            <div class="xu_ni"></div>
-            <div class="contents_detail">
-                <div class="title_tagss">
-                    <div class="postitaons">
-                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
+    <div>
+        <div class="search_content computer">
+            <baisis_msg></baisis_msg>
+            <div class="detail_show">
+                <div class="xu_ni"></div>
+                <div class="contents_detail">
+                    <div class="title_tagss">
+                        <div class="postitaons">
+                            <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
 
-                        <span>首页</span>&nbsp;&nbsp;&nbsp;
-                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
+                            <span>首页</span>&nbsp;&nbsp;&nbsp;
+                            <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
 
-                        <span>压力反应测试</span>
+                            <span>压力反应测试</span>
+                        </div>
+                        <div class="postitao_ctr">
+                            <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-remind-"></i>
+                            <span class="center_tlt">请选择报告</span>
+                        </div>
                     </div>
-                    <div class="postitao_ctr">
-                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-remind-"></i>
-                        <span class="center_tlt">请选择报告</span>
-                    </div>
-                </div>
-                <div class="title" style="background: #f8f8f9">
-                    <div class="time_limit">
-                        <div class="time_limit_p">
-                            <div class="line_colss"></div>&nbsp;&nbsp;&nbsp;
-                            <i style="font-size: 14px;color: #D8D8D8;margin-top: 7px" class="icon iconfont  icon-time-"></i>&nbsp;&nbsp;&nbsp;
-                            <div class="name">
-                                送检时间:
+                    <div class="title" style="background: #f8f8f9">
+                        <div class="time_limit">
+                            <div class="time_limit_p">
+                                <div class="line_colss"></div>&nbsp;&nbsp;&nbsp;
+                                <i style="font-size: 14px;color: #D8D8D8;margin-top: 7px" class="icon iconfont  icon-time-"></i>&nbsp;&nbsp;&nbsp;
+                                <div class="name">
+                                    送检时间:
+                                </div>
+                                <DatePicker  type="daterange" split-panels placeholder="Select date" style="width: 200px"></DatePicker>
                             </div>
-                            <DatePicker  type="daterange" split-panels placeholder="Select date" style="width: 200px"></DatePicker>
-                        </div>
 
-                        <div class="time_limit_confirm">
-                            <i style="font-size: 14px;color: #fff;margin-top: 7px" class="icon iconfont icon-search-"></i>&nbsp;&nbsp;重新搜索
-                        </div>
+                            <div class="time_limit_confirm">
+                                <i style="font-size: 14px;color: #fff;margin-top: 7px" class="icon iconfont icon-search-"></i>&nbsp;&nbsp;重新搜索
+                            </div>
 
-                    </div>
-                    <div class="line_fc"></div>
-                    <div class="tables">
-                        <table class="table_real">
-                            <thead>
+                        </div>
+                        <div class="line_fc"></div>
+                        <div class="tables">
+                            <table class="table_real">
+                                <thead>
                                 <tr>
                                     <th></th>
                                     <th>报告编号</th>
@@ -379,8 +407,8 @@
                                     <th>报告字段3</th>
                                     <th></th>
                                 </tr>
-                            </thead>
-                            <tbody>
+                                </thead>
+                                <tbody>
                                 <tr>
                                     <td style="text-align: right;width: 50px">
                                         <Radio style="color: #D75E5B!important;"></Radio>
@@ -407,66 +435,66 @@
                                     <td style="color: #7FC765">839 <i style="transform: rotate(-180deg);color: #7FC765;font-size: 8px" class="icon iconfont icon-down-"></i></td>
                                     <td style="cursor: pointer" @click="click_alert()"><i style="font-size: 20px;color: rgb(204,204,204)" class="icon iconfont icon-baogao-"></i></td>
                                 </tr>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="buton_choise">
+
+                            <Button @click="view_caht()" class="btin" type="primary" shape="circle">
+                                <img src="../images/tubiao-01.png" style="position: relative;top: 2px" height="22" alt="">
+                                &nbsp;&nbsp;<span>按图标展示</span>
+                            </Button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <Button @click="pai_ming()" class="btin" type="primary" shape="circle">
+                                <img src="../images/ranking-01.png" style="position: relative;top: 2px" height="22" alt="">
+                                &nbsp;&nbsp;<span>查看排名</span>
+                            </Button>
+                        </div>
                     </div>
 
-                    <div class="buton_choise">
-
-                        <Button @click="view_caht()" class="btin" type="primary" shape="circle">
-                            <img src="../images/tubiao-01.png" style="position: relative;top: 2px" height="22" alt="">
-                            &nbsp;&nbsp;<span>按图标展示</span>
-                        </Button>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <Button @click="pai_ming()" class="btin" type="primary" shape="circle">
-                            <img src="../images/ranking-01.png" style="position: relative;top: 2px" height="22" alt="">
-                            &nbsp;&nbsp;<span>查看排名</span>
-                        </Button>
-                    </div>
                 </div>
-
             </div>
-        </div>
 
-        <div class="box_logo_bottom">
-            <div class="xu_ni_new"></div>
-            <img height="30" src="../images/mindfrog.png" alt="">
+            <div class="box_logo_bottom">
+                <div class="xu_ni_new"></div>
+                <img height="30" src="../images/mindfrog.png" alt="">
 
-            <span>
+                <span>
                 &nbsp;&nbsp;&nbsp;&nbsp;Copyright © Mindfrog All rights reserved
             </span>
-        </div>
-        <!--弹框-->
-        <Modal
-                v-model="modal6"
-                title="报告编号：13251"
-                :loading="loading"
-                @on-ok="asyncOK" width="1200">
+            </div>
+            <!--弹框-->
+            <Modal
+                    v-model="modal6"
+                    title="报告编号：13251"
+                    :loading="loading"
+                    @on-ok="asyncOK" width="1200">
                 <div class="alert_css">
                     <div class="titles">
                         患者信息
                     </div>
                     <table>
                         <tbody>
-                            <tr>
-                                <td class="name_black">姓名</td><td>张三</td>
-                                <td class="name_black">性别</td><td>张三</td>
-                                <td class="name_black">身高</td><td>张三</td>
-                            </tr>
-                            <tr>
-                                <td class="name_black">体重</td><td>张三</td>
-                                <td class="name_black">年龄</td><td>张三</td>
-                                <td class="name_black">血型</td><td>张三</td>
-                            </tr>
-                            <tr>
-                                <td class="name_black">过敏史</td><td>张三</td>
-                                <td class="name_black">病院编号</td><td>张三</td>
-                                <td class="name_black">患者类型</td><td>张三</td>
-                            </tr>
-                            <tr>
-                                <td class="name_black">送检科室</td><td>张三</td>
-                                <td class="name_black">诊断结果</td><td colspan="3" >张三</td>
-                            </tr>
+                        <tr>
+                            <td class="name_black">姓名</td><td>张三</td>
+                            <td class="name_black">性别</td><td>张三</td>
+                            <td class="name_black">身高</td><td>张三</td>
+                        </tr>
+                        <tr>
+                            <td class="name_black">体重</td><td>张三</td>
+                            <td class="name_black">年龄</td><td>张三</td>
+                            <td class="name_black">血型</td><td>张三</td>
+                        </tr>
+                        <tr>
+                            <td class="name_black">过敏史</td><td>张三</td>
+                            <td class="name_black">病院编号</td><td>张三</td>
+                            <td class="name_black">患者类型</td><td>张三</td>
+                        </tr>
+                        <tr>
+                            <td class="name_black">送检科室</td><td>张三</td>
+                            <td class="name_black">诊断结果</td><td colspan="3" >张三</td>
+                        </tr>
                         </tbody>
                     </table>
 
@@ -475,18 +503,18 @@
                     </div>
                     <table>
                         <tbody>
-                            <tr>
-                                <td class="name_black">编号</td><td class="name_black">编号</td>
-                                <td class="name_black">编号</td><td class="name_black">编号</td>
-                            </tr>
-                            <tr>
-                                <td>体重</td><td>张三</td>
-                                <td>年龄</td><td>张三</td>
-                            </tr>
-                            <tr>
-                                <td>体重</td><td>张三</td>
-                                <td>年龄</td><td>张三</td>
-                            </tr>
+                        <tr>
+                            <td class="name_black">编号</td><td class="name_black">编号</td>
+                            <td class="name_black">编号</td><td class="name_black">编号</td>
+                        </tr>
+                        <tr>
+                            <td>体重</td><td>张三</td>
+                            <td>年龄</td><td>张三</td>
+                        </tr>
+                        <tr>
+                            <td>体重</td><td>张三</td>
+                            <td>年龄</td><td>张三</td>
+                        </tr>
                         </tbody>
                     </table>
 
@@ -495,34 +523,82 @@
                     </div>
                     <table>
                         <tbody>
-                            <tr>
-                                <td class="name_black">姓名</td><td>张三</td>
-                                <td class="name_black">性别</td><td>张三</td>
-                                <td class="name_black">身高</td><td>张三</td>
-                            </tr>
-                            <tr>
-                                <td class="name_black">体重</td><td>张三</td>
-                                <td class="name_black">年龄</td><td>张三</td>
-                                <td class="name_black">血型</td><td>张三</td>
-                            </tr>
+                        <tr>
+                            <td class="name_black">姓名</td><td>张三</td>
+                            <td class="name_black">性别</td><td>张三</td>
+                            <td class="name_black">身高</td><td>张三</td>
+                        </tr>
+                        <tr>
+                            <td class="name_black">体重</td><td>张三</td>
+                            <td class="name_black">年龄</td><td>张三</td>
+                            <td class="name_black">血型</td><td>张三</td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
 
-            <div slot="footer" style="text-align: center;margin: 10px 0 20px 0">
-                <div class="butoton_box">
-                    <Button shape="circle" style="width: 140px"><i style="font-size: 20px;color: #D8D8D8;" class="icon iconfont icon-export-"></i><span class="butoton_box_ld">导出</span></Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Button shape="circle" style="width: 140px"><i style="font-size: 20px;color: #D8D8D8;" class="icon iconfont icon-print-"></i><span class="butoton_box_ld">打印</span></Button>
-                </div>
+                <div slot="footer" style="text-align: center;margin: 10px 0 20px 0">
+                    <div class="butoton_box">
+                        <Button shape="circle" style="width: 140px"><i style="font-size: 20px;color: #D8D8D8;" class="icon iconfont icon-export-"></i><span class="butoton_box_ld">导出</span></Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <Button shape="circle" style="width: 140px"><i style="font-size: 20px;color: #D8D8D8;" class="icon iconfont icon-print-"></i><span class="butoton_box_ld">打印</span></Button>
+                    </div>
 
+                </div>
+            </Modal>
+        </div>
+        <div class="mobile_phone content_search_for_mobile only_search_for_mobile">
+            <basis_msg_mobile title_value="请选择送检时间范围"></basis_msg_mobile>
+            <div class="box_range">
+                <div class="title_f">
+                    <i style="font-size: 4px;color: #D8D8D8;" class="icon iconfont icon-remind-"></i>&nbsp;&nbsp;
+                    <span>送检时间</span>
+                </div>
+                <div class="time_select">
+                    <div id="class_one">开始时间</div>
+                    <div style="margin: 5px 10px 0 10px">-</div>
+                    <div id="class_two">结束时间</div>
+                    <div class="search" @click="search_list()">
+                        <i style="font-size: 14px;color: #ffffff;position: relative;top: 6px;left: 15px" class="icon iconfont icon-search-"></i>
+                    </div>
+                </div>
             </div>
-        </Modal>
+            <table class="table_css" style="width: 100%">
+                <thead>
+                    <tr class="tr_for_tab">
+                        <th>报告编号</th>
+                        <th>送检时间</th>
+                        <th>报告时间</th>
+                        <th>送检医生</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>123456</td>
+                        <td>2012-10-10</td>
+                        <td>2012-10-10</td>
+                        <td>黎明</td>
+                        <td style="padding-right: 5px"><i style="font-size: 15px;color: rgb(204,204,204);position: relative;top: 1px" class="icon iconfont icon-baogao-"></i></td>
+                    </tr>
+                    <tr>
+                        <td>123456</td>
+                        <td>2012-10-10</td>
+                        <td>2012-10-10</td>
+                        <td>黎明</td>
+                        <td style="padding-right: 5px"><i style="font-size: 15px;color: rgb(204,204,204);position: relative;top: 1px" class="icon iconfont icon-baogao-"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
 
 <script>
     import $ from 'jquery'
-    import baisis_msg from './basis_msg.vue'
+    import baisis_msg from './basis_msg.vue';
+    import basis_msg_mobile from './basis_msg_mobile.vue';
+    import MobileSelect from 'mobile-select';
+    import date from '../template/date.js';
     export default {
         data () {
             return {
@@ -571,14 +647,37 @@
             }
         },
         components:{
-            baisis_msg
+            baisis_msg,
+            basis_msg_mobile
         },
         mounted(){
-          $(".ivu-modal-header-inner").css({
+            $(".ivu-modal-header-inner").css({
                 'font-family': 'PingFangSC-Medium',
                 'font-size': '18px',
                 'color': '#000000'
-          });
+            });
+            new MobileSelect({
+                trigger: "#class_one",
+                title: '开始时间',
+                wheels: [
+                    {data:date.date()}
+                ],
+                position:[0,1],
+                callback:function(indexArr, data){
+                    console.log(data); //返回选中的json数据
+                }
+            });
+            new MobileSelect({
+                trigger: "#class_two",
+                title: '结束时间',
+                wheels: [
+                    {data:date.date()}
+                ],
+                position:[0,1],
+                callback:function(indexArr, data){
+                    console.log(data); //返回选中的json数据
+                }
+            });
         },
         methods:{
             exit(){

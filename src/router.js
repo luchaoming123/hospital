@@ -40,6 +40,14 @@ const routers = [
         component: (resolve) => require(['./views/only_search.vue'], resolve)
     },
     {
+        path: '/search_mobile',
+        name:'search_mobile',
+        meta: {
+            title: ''
+        },
+        component: (resolve) => require(['./views/content_search_for_mobile.vue'], resolve)
+    },
+    {
         path: '/sort',
         name:'sort',
         meta: {
