@@ -37,58 +37,64 @@
     }
 </style>
 <template>
-    <div class="echart_result">
-        <baisis_msg></baisis_msg>
-        <div class="contents_des">
+    <div>
+        <div class="echart_result computer">
+            <baisis_msg></baisis_msg>
+            <div class="contents_des">
 
-            <div class="xu_ni"></div>
-            <div class="contents_detail">
-                <div class="title_tagss">
-                    <div class="postitaons">
-                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
+                <div class="xu_ni"></div>
+                <div class="contents_detail">
+                    <div class="title_tagss">
+                        <div class="postitaons">
+                            <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
 
-                        <span>首页</span>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
+                            <span>首页</span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
 
-                        <span>压力反应测试</span>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
+                            <span>压力反应测试</span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-arrow-"></i>
 
-                        <span>图标展示</span>
+                            <span>图标展示</span>
+                        </div>
+                        <div class="postitao_ctr">
+                            <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-remind-"></i>
+                            <span class="center_tlt">报告编号：<b>129825</b></span>
+                        </div>
                     </div>
-                    <div class="postitao_ctr">
-                        <i style="font-size: 8px;color: #D8D8D8;" class="icon iconfont icon-remind-"></i>
-                        <span class="center_tlt">报告编号：<b>129825</b></span>
-                    </div>
-                </div>
-                <div class="title" style="background: #f8f8f9">
-                    <Row>
-                        <Col span="8" class="view_chart">
+                    <div class="title" style="background: #f8f8f9">
+                        <Row>
+                            <Col span="8" class="view_chart">
                             <div class="pad_10" id="main_one" style="height: 400px;"></div>
-                        </Col>
-                        <Col span="8" class="view_chart">
+                            </Col>
+                            <Col span="8" class="view_chart">
                             <div class="pad_10" id="main_two" style="height: 400px;"></div>
-                        </Col>
-                        <Col span="8" class="view_chart">
+                            </Col>
+                            <Col span="8" class="view_chart">
                             <div class="pad_10" id="main_four" style="height: 400px;"></div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col span="8" class="view_chart">
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col span="8" class="view_chart">
                             <div class="pad_10" id="main_three" style="height: 400px;"></div>
-                        </Col>
-                    </Row>
+                            </Col>
+                        </Row>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="box_logo_bottom">
-            <div class="xu_ni_new"></div>
-            <img height="30" src="../images/mindfrog.png" alt="">
+            <div class="box_logo_bottom">
+                <div class="xu_ni_new"></div>
+                <img height="30" src="../images/mindfrog.png" alt="">
 
-            <span>
+                <span>
                 &nbsp;&nbsp;&nbsp;&nbsp;Copyright © Mindfrog All rights reserved
             </span>
+            </div>
+        </div>
+        <div class="mobile_phone">
+            <basis_msg_mobile title_value=">报告编号：129825"></basis_msg_mobile>
+            <div class="pad_10" id="main_mobile_one" style="height: 300px;"></div>
         </div>
     </div>
 </template>
@@ -96,6 +102,7 @@
 <script>
     import $ from 'jquery';
     import baisis_msg from './basis_msg.vue';
+    import basis_msg_mobile from './basis_msg_mobile.vue';
     import echarts from 'echarts';
     export default {
         data () {
@@ -105,7 +112,8 @@
             }
         },
         components:{
-            baisis_msg
+            baisis_msg,
+            basis_msg_mobile
         },
         mounted(){
 
@@ -115,8 +123,10 @@
              * */
                 // 基于准备好的dom，初始化echarts实例
             var myChart_one = echarts.init(document.getElementById('main_one'));
+            var main_mobile_one = echarts.init(document.getElementById('main_mobile_one'));
             // 绘制图表
             myChart_one.setOption(this.echart_one());
+            main_mobile_one.setOption(this.echart_one());
             /**
              * 表二
              * */
