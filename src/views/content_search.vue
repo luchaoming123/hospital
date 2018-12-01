@@ -271,7 +271,8 @@
             .tr_for_tab{
                 width: 100%;
                 background: #FFFFFF;
-                border: 1px solid #E5E5E5;
+                border-top: 1px solid #E5E5E5;
+                border-bottom: 1px solid #E5E5E5;
                 font-family: PingFangSC-Regular;
                 font-size: 11px;
                 color: #9B9B9B;

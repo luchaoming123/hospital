@@ -1,4 +1,5 @@
 <style scope>
+
     .mobile_top{
         height: 50px;
         width: 100%;
@@ -43,7 +44,7 @@
     }
 
     .line_css_mobile{
-        height: 1px;
+        height: 2px;
         width: 100%;
         background: #E6655F;
     }
@@ -65,11 +66,12 @@
         position: fixed;
         height: 100%;
         width: 100%;
+        top:52px;
         overflow-y: auto;
         background: rgba(0,0,0,0.64);
         z-index: 100;
         .contents_for{
-            margin: 40px 50px 30px 15px;
+            margin: 20px 75px 30px 20px;
             background: #FFFFFF;
             border: 1px solid #ECECEC;
             box-shadow: 0 4px 4px 0 rgba(34,44,75,0.10);
@@ -88,18 +90,22 @@
             }
             .title_img_one{
                 display: flex;
-                .imgs{
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 50%;
-                }
-                .name{
-                    font-family: PingFangSC-Medium;
-                    font-size: 14px;
-                    color: #4E5056;
-                    letter-spacing: 0.6px;
-                    line-height: 50px;
-                    margin:0 10px;
+                justify-content: space-between;
+                .tiel_lef{
+                    display: flex;
+                    .imgs{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                    }
+                    .name{
+                        font-family: PingFangSC-Medium;
+                        font-size: 14px;
+                        color: #4E5056;
+                        letter-spacing: 0.6px;
+                        line-height: 50px;
+                        margin:0 10px;
+                    }
                 }
 
             }
@@ -134,13 +140,19 @@
             }
         }
     }
+
+
+    body{
+        background: #FAFAFA;
+        background-image: none
+    }
 </style>
 <template>
     <div>
         <div class="mobile_top">
-            <div class="left">
+            <div class="left" >
                 <i  style="font-size: 15px;color: #D8D8D8;" class="icon iconfont icon-last-"></i>
-                <img class="imgs" src="https://i.loli.net/2017/08/21/599a521472424.jpg" alt="">
+                <img class="imgs" @click="show_us()" src="https://i.loli.net/2017/08/21/599a521472424.jpg" alt="">
             </div>
             <div class="center">
                 <img  height="25" width="25" style="margin: 2px 5px 0 0" src="../images/danao-2-01-01.png" alt="">
@@ -164,13 +176,17 @@
             <span>{{title_value}}</span>
         </div>
         <!--用户信息-->
-        <div class="msg_for_user">
+        <div class="msg_for_user" v-if="show_if_user_msg">
             <div class="contents_for">
                 <div class="icon_v"></div>
                 <div class="title_img_one">
-                    <img class="imgs" src="https://i.loli.net/2017/08/21/599a521472424.jpg" alt="">
-                    <div class="name">张三</div>
-                    <i style="font-size: 14px;color: rgb(110,121,238);margin-top: 15px" class="icon iconfont icon-man-"></i>
+                    <div class="tiel_lef">
+                        <img class="imgs" src="https://i.loli.net/2017/08/21/599a521472424.jpg" alt="">
+                        <div class="name">张三</div>
+                        <i style="font-size: 14px;color: rgb(110,121,238);margin-top: 15px" class="icon iconfont icon-man-"></i>
+                    </div>
+
+                    <i  @click="cancel()" style="font-size: 20px;color: rgb(230,101,95);" class="icon iconfont icon-close-"></i>
                 </div>
                 <div class="line_css_wod"></div>
                 <div class="show_your_msg">
@@ -206,10 +222,11 @@
     </div>
 </template>
 <script>
+    import $ from 'jquery';
     export default{
         data () {
             return {
-
+                show_if_user_msg:false
             }
         },
         props:[
@@ -218,8 +235,19 @@
         components:{
 
         },
+        mounted(){
+            $("body").css({
+                'background-image':"none",
+                'background':'#FAFAFA'
+            })
+        },
         methods:{
-
+            show_us(){
+                this.show_if_user_msg=true;
+            },
+            cancel(){
+                this.show_if_user_msg=false;
+            }
         }
     }
 </script>

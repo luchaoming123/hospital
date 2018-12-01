@@ -50,7 +50,7 @@
     .only_search_for_mobile{
         .box_range{
             background: #FFFFFF;
-            border: 1px solid #E5E5E5;
+            border-bottom: 1px solid #E5E5E5;
             display: flex;
             padding: 15px;
             flex-direction: column;

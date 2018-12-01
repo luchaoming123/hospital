@@ -1,7 +1,7 @@
 <style scope>
     body{
         background: #FAFAFA;
-        background-image: none!important;
+        background-image: none
     }
     .box_all{
         .aside{
@@ -237,11 +237,18 @@
 </template>
 
 <script>
+    import $ from 'jquery';
     export default {
         data () {
             return {
                 theme3: 'dark'
             }
+        },
+        mounted(){
+            $("body").css({
+                'background-image':"none",
+                'background':'#FAFAFA'
+            })
         },
         methods:{
             exit(){

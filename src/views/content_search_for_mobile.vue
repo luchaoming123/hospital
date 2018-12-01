@@ -10,6 +10,15 @@
            font-size: 14px;
            color: #000000;
            margin-bottom: 10px;
+            display: flex;
+           .line_red_lef{
+               height: 10px;
+               width: 2px;
+               position: relative;
+               left: -10px;
+               top:6px;
+               background-color: #E6655F;
+           }
        }
        .title_title{
            font-family: PingFangSC-Regular;
@@ -62,26 +71,35 @@
             <basis_msg_mobile title_value="无"></basis_msg_mobile>
             <div class="table_show_us">
                 <div class="title_mob">
-                    报告编号：201500
+                    <div class="line_red_lef">
+
+                    </div>
+                    <div>
+                        报告编号：201500
+                    </div>
                 </div>
 
                 <div style="margin-bottom: 10px">
                     <div class="title_title"></div>
                     <div class="hopital_name">患者信息</div>
                     <div class="line_css_mob"></div>
-                    <div class="msg_for_hopital"><span>姓名</span><span class="value_msg">张三</span></div>
-                    <div class="msg_for_hopital"><span>体重</span><span class="value_msg">张三</span></div>
-                    <div class="msg_for_hopital"><span>过敏史</span><span class="value_msg">张三</span></div>
-                    <div class="msg_for_hopital"><span>送检科室</span><span class="value_msg">张三</span></div>
+                    <div style="padding: 0 5px">
+                        <div class="msg_for_hopital"><span>姓名</span><span class="value_msg">张三</span></div>
+                        <div class="msg_for_hopital"><span>体重</span><span class="value_msg">张三</span></div>
+                        <div class="msg_for_hopital"><span>过敏史</span><span class="value_msg">张三</span></div>
+                        <div class="msg_for_hopital"><span>送检科室</span><span class="value_msg">张三</span></div>
+                    </div>
                 </div>
                 <div style="margin-bottom: 10px">
                     <div class="title_title"></div>
                     <div class="hopital_name">患者信息</div>
                     <div class="line_css_mob"></div>
-                    <div class="msg_for_hopital"><span>姓名</span><span class="value_msg">张三</span></div>
-                    <div class="msg_for_hopital"><span>体重</span><span class="value_msg">张三</span></div>
-                    <div class="msg_for_hopital"><span>过敏史</span><span class="value_msg">张三</span></div>
-                    <div class="msg_for_hopital"><span>送检科室</span><span class="value_msg">张三</span></div>
+                    <div style="padding: 0 5px">
+                        <div class="msg_for_hopital"><span>姓名</span><span class="value_msg">张三</span></div>
+                        <div class="msg_for_hopital"><span>体重</span><span class="value_msg">张三</span></div>
+                        <div class="msg_for_hopital"><span>过敏史</span><span class="value_msg">张三</span></div>
+                        <div class="msg_for_hopital"><span>送检科室</span><span class="value_msg">张三</span></div>
+                    </div>
                 </div>
 
                 <div class="rebak_to_search">返回</div>

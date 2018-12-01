@@ -56,7 +56,7 @@
         display: none;
     }
     body{
-        background-image: url("../images/bg_login.png") !important;
+        background-image: url("../images/bg_login.png")
     }
     .login_on{
         display: flex;
@@ -225,7 +225,8 @@
 </template>
 
 <script>
-    import $ from 'jquery'
+    import $ from 'jquery';
+    import url_img from '../images/bg_login.png';
     export default {
         data () {
             return {
@@ -237,7 +238,9 @@
 
         },
         mounted(){
-
+            $("body").css({
+                'background-image':"url('"+url_img+"')"
+            })
         },
         methods:{
             exit(){
