@@ -33,7 +33,14 @@
     }
     .xu_ni{
         width: 16%;
-        height: 900px;
+        height: 300px;
+    }
+    .box_for_mob_echart{
+        margin: 10px 20px 0 20px;
+        padding: 15px;
+        background: #FFFFFF;
+        box-shadow: 0 0 6px 0 rgba(0,0,0,0.10);
+        border-radius: 3px;
     }
 </style>
 <template>
@@ -94,7 +101,18 @@
         </div>
         <div class="mobile_phone">
             <basis_msg_mobile title_value="报告编号：129825"></basis_msg_mobile>
-            <div class="pad_10" id="main_mobile_one" style="height: 300px;"></div>
+            <div class="box_for_mob_echart">
+                <div class="pad_10" id="main_mobile_one" style="height: 300px;"></div>
+            </div>
+            <div class="box_for_mob_echart">
+                <div class="pad_10" id="main_mobile_two" style="height: 300px;"></div>
+            </div>
+            <div class="box_for_mob_echart">
+                <div class="pad_10" id="main_mobile_three" style="height: 300px;"></div>
+            </div>
+            <div class="box_for_mob_echart">
+                <div class="pad_10" id="main_mobile_four" style="height: 300px;"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -132,27 +150,33 @@
              * */
             // 基于准备好的dom，初始化echarts实例
             var myChart_two = echarts.init(document.getElementById('main_two'));
+            var main_mobile_two = echarts.init(document.getElementById('main_mobile_two'));
 
             // 绘制图表
             myChart_two.setOption(this.echart_two());
+            main_mobile_two.setOption(this.echart_two());
 
             /**
              * 表三
              * */
             // 基于准备好的dom，初始化echarts实例
             var myChart_three = echarts.init(document.getElementById('main_three'));
+            var main_mobile_three = echarts.init(document.getElementById('main_mobile_three'));
 
             // 绘制图表
             myChart_three.setOption(this.echart_three());
+            main_mobile_three.setOption(this.echart_three());
 
             /**
              * 表四
              * */
                 // 基于准备好的dom，初始化echarts实例
             var myChart_four = echarts.init(document.getElementById('main_four'));
+            var main_mobile_four = echarts.init(document.getElementById('main_mobile_four'));
 
             // 绘制图表
             myChart_four.setOption(this.echart_four());
+            main_mobile_four.setOption(this.echart_four());
 
         },
         methods:{

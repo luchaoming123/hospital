@@ -271,7 +271,8 @@
             .tr_for_tab{
                 width: 100%;
                 background: #FFFFFF;
-                border: 1px solid #E5E5E5;
+                border-top: 1px solid #E5E5E5;
+                border-bottom: 1px solid #E5E5E5;
                 font-family: PingFangSC-Regular;
                 font-size: 11px;
                 color: #9B9B9B;
@@ -383,10 +384,10 @@
                                 <div class="name">
                                     送检时间:
                                 </div>
-                                <DatePicker  type="daterange" split-panels placeholder="Select date" style="width: 200px"></DatePicker>
+                                <DatePicker  type="daterange" @on-change="time_search_value"  split-panels placeholder="Select date" style="width: 200px"></DatePicker>
                             </div>
 
-                            <div class="time_limit_confirm">
+                            <div class="time_limit_confirm" @click="search_reset()">
                                 <i style="font-size: 14px;color: #fff;margin-top: 7px" class="icon iconfont icon-search-"></i>&nbsp;&nbsp;重新搜索
                             </div>
 
@@ -409,31 +410,22 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
+                                <tr v-for="(item,index) in table_list">
                                     <td style="text-align: right;width: 50px">
-                                        <Radio style="color: #D75E5B!important;"></Radio>
+                                        <Checkbox  @on-change="radio_array()" :value="index"
+                                               style="color: #D75E5B!important;">
+
+                                        </Checkbox>
                                     </td>
-                                    <td style="width: 80px">123456</td>
-                                    <td style="font-size: 12px">123456</td>
-                                    <td style="font-size: 12px;">123456</td>
-                                    <td>123456</td>
-                                    <td>123456</td>
-                                    <td>123456</td>
-                                    <td style="color: #E6655F">839 <i style="transform: rotate(-180deg);color: #E6655F;font-size: 8px" class="icon iconfont icon-down-"></i></td>
-                                    <td style="color: #7FC765">839 <i style="transform: rotate(-180deg);color: #7FC765;font-size: 8px" class="icon iconfont icon-down-"></i></td>
-                                    <td style="cursor: pointer" @click="click_alert()"><i style="font-size: 20px;color: rgb(204,204,204)" class="icon iconfont icon-baogao-"></i></td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: right;width: 50px"><Radio style="color: #D75E5B;"></Radio></td>
-                                    <td style="width: 80px">123456</td>
-                                    <td style="font-size: 12px">123456</td>
-                                    <td style="font-size: 12px;">123456</td>
-                                    <td>123456</td>
-                                    <td>123456</td>
-                                    <td>123456</td>
-                                    <td style="color: #E6655F">839 <i style="transform: rotate(-180deg);color: #E6655F;font-size: 8px" class="icon iconfont icon-down-"></i></td>
-                                    <td style="color: #7FC765">839 <i style="transform: rotate(-180deg);color: #7FC765;font-size: 8px" class="icon iconfont icon-down-"></i></td>
-                                    <td style="cursor: pointer" @click="click_alert()"><i style="font-size: 20px;color: rgb(204,204,204)" class="icon iconfont icon-baogao-"></i></td>
+                                    <td style="width: 80px">{{item.num}}</td>
+                                    <td style="font-size: 12px">{{item.check_time}}</td>
+                                    <td style="font-size: 12px;">{{item.come_time}}</td>
+                                    <td>{{item.doctor}}</td>
+                                    <td>{{item.person}}</td>
+                                    <td>{{item.zi_duan}}</td>
+                                    <td style="color: #E6655F">{{item.zi_duan_two}} <i style="transform: rotate(-180deg);color: #E6655F;font-size: 8px" class="icon iconfont icon-down-"></i></td>
+                                    <td style="color: #7FC765">{{item.zi_duan_three}} <i style="transform: rotate(-180deg);color: #7FC765;font-size: 8px" class="icon iconfont icon-down-"></i></td>
+                                    <td style="cursor: pointer" @click="click_alert(index)"><i style="font-size: 20px;color: rgb(204,204,204)" class="icon iconfont icon-baogao-"></i></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -573,18 +565,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>123456</td>
-                        <td>2012-10-10</td>
-                        <td>2012-10-10</td>
-                        <td>黎明</td>
-                        <td style="padding-right: 5px"><i style="font-size: 15px;color: rgb(204,204,204);position: relative;top: 1px" class="icon iconfont icon-baogao-"></i></td>
-                    </tr>
-                    <tr>
-                        <td>123456</td>
-                        <td>2012-10-10</td>
-                        <td>2012-10-10</td>
-                        <td>黎明</td>
+                    <tr v-for="item in table_list">
+                        <td>{{item.num}}</td>
+                        <td>{{item.check_time}}</td>
+                        <td>{{item.come_time}}</td>
+                        <td>{{item.doctor}}</td>
                         <td style="padding-right: 5px"><i style="font-size: 15px;color: rgb(204,204,204);position: relative;top: 1px" class="icon iconfont icon-baogao-"></i></td>
                     </tr>
                 </tbody>
@@ -604,44 +589,38 @@
             return {
                 modal6: false,
                 loading: true,
-                columns1: [
+                start_search_time:'',
+                end_search_time:'',
+                table_list:[
                     {
-                        title: 'Name',
-                        key: 'name'
+                        num:123,
+                        check_time:'2012-10-10',
+                        come_time:'2015-10-12',
+                        doctor:'黎明',
+                        person:'小妹',
+                        zi_duan:'111',
+                        zi_duan_two:'222',
+                        zi_duan_three:'333'
                     },
                     {
-                        title: 'Age',
-                        key: 'age'
+                        num:123,
+                        check_time:'2012-10-10',
+                        come_time:'2015-10-12',
+                        doctor:'黎明',
+                        person:'小妹',
+                        zi_duan:'111',
+                        zi_duan_two:'222',
+                        zi_duan_three:'333'
                     },
                     {
-                        title: 'Address',
-                        key: 'address'
-                    }
-                ],
-                data1: [
-                    {
-                        name: 'John Brown',
-                        age: 18,
-                        address: 'New York No. 1 Lake Park',
-                        date: '2016-10-03'
-                    },
-                    {
-                        name: 'Jim Green',
-                        age: 33,
-                        address: 'London No. 1 Lake Park',
-                        date: '2016-10-01'
-                    },
-                    {
-                        name: 'Joe Black',
-                        age: 45,
-                        address: 'Sydney No. 1 Lake Park',
-                        date: '2016-10-02'
-                    },
-                    {
-                        name: 'Jon Snow',
-                        age: 55,
-                        address: 'Ottawa No. 2 Lake Park',
-                        date: '2016-10-04'
+                        num:123,
+                        check_time:'2012-10-10',
+                        come_time:'2015-10-12',
+                        doctor:'黎明',
+                        person:'小妹',
+                        zi_duan:'111',
+                        zi_duan_two:'222',
+                        zi_duan_three:'333'
                     }
                 ]
             }
@@ -651,6 +630,7 @@
             basis_msg_mobile
         },
         mounted(){
+            const that=this;
             $(".ivu-modal-header-inner").css({
                 'font-family': 'PingFangSC-Medium',
                 'font-size': '18px',
@@ -665,6 +645,8 @@
                 position:[0,1],
                 callback:function(indexArr, data){
                     console.log(data); //返回选中的json数据
+
+                    that.start_search_time=data;
                 }
             });
             new MobileSelect({
@@ -676,6 +658,8 @@
                 position:[0,1],
                 callback:function(indexArr, data){
                     console.log(data); //返回选中的json数据
+
+                    that.end_search_time=data;
                 }
             });
         },
@@ -688,7 +672,8 @@
                     this.modal6 = false;
                 }, 2000);
             },
-            click_alert(){
+            click_alert(e){
+                /*e表示当前点击的是第几个参数*/
                 this.modal6 = true
             },
             view_caht(){
@@ -696,6 +681,20 @@
             },
             pai_ming(){
                 this.$router.push({ name: 'sort', params: { userId: 123 }})
+            },
+            search_reset(){
+                //开始时间
+                const start_time=this.start_search_time;
+                //结束时间
+                const end_time=this.end_search_time;
+
+            },
+            time_search_value(e){
+                this.start_search_time=e[0];
+                this.end_search_time=e[1];
+            },
+            radio_array(e){
+                console.log(e);
             }
         }
     }

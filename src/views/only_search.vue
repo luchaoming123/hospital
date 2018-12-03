@@ -50,7 +50,7 @@
     .only_search_for_mobile{
         .box_range{
             background: #FFFFFF;
-            border: 1px solid #E5E5E5;
+            border-bottom: 1px solid #E5E5E5;
             display: flex;
             padding: 15px;
             flex-direction: column;
@@ -222,6 +222,7 @@
             basis_msg_mobile
         },
         mounted(){
+            var that=this;
             $('.el-date-editor ').click();
             //删除没用的图标
             setTimeout(function () {
@@ -237,6 +238,7 @@
                 position:[0,1],
                 callback:function(indexArr, data){
                     console.log(data); //返回选中的json数据
+                    that.start_time=data;
                 }
             });
             new MobileSelect({
@@ -248,6 +250,7 @@
                 position:[0,1],
                 callback:function(indexArr, data){
                     console.log(data); //返回选中的json数据
+                    that.end_time=data;
                 }
             });
         },
