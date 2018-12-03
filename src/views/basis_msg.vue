@@ -140,8 +140,9 @@
             <br>
             <Row>
                 <Col class="name_large" span="24">
-                张学友
-                <i style="font-size: 14px;color: rgb(110,121,238)" class="icon iconfont icon-man-"></i>
+                {{basis_msg.name}}
+                <i v-if="basis_msg.sex == '男'" style="font-size: 14px;color: rgb(110,121,238)" class="icon iconfont icon-man-"></i>
+                <i v-else style="font-size: 14px;color: #E6655F" class="icon iconfont icon-woman-"></i>
                 </Col>
             </Row>
             <br>
@@ -151,49 +152,49 @@
             <br>
             <Row>
                 <Col class="name" span="12">身高：</Col>
-                <Col class="valus_" span="12">180cm</Col>
+                <Col class="valus_" span="12">{{basis_msg.heigth}}</Col>
             </Row>
             <br>
             <br>
             <Row>
                 <Col class="name" span="12">体重：</Col>
-                <Col class="valus_" span="12">70kg</Col>
+                <Col class="valus_" span="12">{{basis_msg.heave}}</Col>
             </Row>
             <br>
             <br>
             <Row>
                 <Col class="name" span="12">年龄：</Col>
-                <Col class="valus_" span="12">40岁</Col>
+                <Col class="valus_" span="12">{{basis_msg.age}}</Col>
             </Row>
             <br>
             <br>
             <Row>
                 <Col class="name" span="12">血缘：</Col>
-                <Col class="valus_" span="12">O型</Col>
+                <Col class="valus_" span="12">{{basis_msg.xue}}</Col>
             </Row>
             <br>
             <br>
             <Row>
                 <Col class="name" span="12">过敏源：</Col>
-                <Col class="valus_" span="12">暂无</Col>
+                <Col class="valus_" span="12">{{basis_msg.guo_ming}}</Col>
             </Row>
             <br>
             <br>
             <Row>
                 <Col class="name" span="12">病院编号：</Col>
-                <Col class="valus_" span="12">12345</Col>
+                <Col class="valus_" span="12">{{basis_msg.num}}</Col>
             </Row>
             <br>
             <br>
             <Row>
                 <Col class="name" span="12">患者类型：</Col>
-                <Col class="valus_" span="12">普通</Col>
+                <Col class="valus_" span="12">{{basis_msg.type}}</Col>
             </Row>
             <br>
             <br>
             <Row>
                 <Col class="name" span="12">送检科室：</Col>
-                <Col class="valus_" span="12">内科</Col>
+                <Col class="valus_" span="12">{{basis_msg.check_room}}</Col>
             </Row>
             <br>
             <br>
@@ -202,7 +203,7 @@
             </Row>
             <Row>
                 <br>
-                <Col class="valus_" style="text-align: left" span="12">待定</Col>
+                <Col class="valus_" style="text-align: left" span="12">{{basis_msg.result}}</Col>
             </Row>
             <br>
 
@@ -241,7 +242,20 @@
     export default {
         data () {
             return {
-                theme3: 'dark'
+                theme3: 'dark',
+                basis_msg:{
+                    name:'张三',
+                    sex:'男',
+                    heigth:'172',
+                    heave:'52kg',
+                    age:'25',
+                    xue:'O型',
+                    guo_ming:'无',
+                    num:'123',
+                    type:'普通',
+                    check_room:'科室一',
+                    result:'正常'
+                }
             }
         },
         mounted(){

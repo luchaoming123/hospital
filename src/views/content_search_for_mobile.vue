@@ -79,26 +79,15 @@
                     </div>
                 </div>
 
-                <div style="margin-bottom: 10px">
+                <div style="margin-bottom: 10px" v-for="(item,index) in user_msg">
                     <div class="title_title"></div>
                     <div class="hopital_name">患者信息</div>
                     <div class="line_css_mob"></div>
                     <div style="padding: 0 5px">
-                        <div class="msg_for_hopital"><span>姓名</span><span class="value_msg">张三</span></div>
-                        <div class="msg_for_hopital"><span>体重</span><span class="value_msg">张三</span></div>
-                        <div class="msg_for_hopital"><span>过敏史</span><span class="value_msg">张三</span></div>
-                        <div class="msg_for_hopital"><span>送检科室</span><span class="value_msg">张三</span></div>
-                    </div>
-                </div>
-                <div style="margin-bottom: 10px">
-                    <div class="title_title"></div>
-                    <div class="hopital_name">患者信息</div>
-                    <div class="line_css_mob"></div>
-                    <div style="padding: 0 5px">
-                        <div class="msg_for_hopital"><span>姓名</span><span class="value_msg">张三</span></div>
-                        <div class="msg_for_hopital"><span>体重</span><span class="value_msg">张三</span></div>
-                        <div class="msg_for_hopital"><span>过敏史</span><span class="value_msg">张三</span></div>
-                        <div class="msg_for_hopital"><span>送检科室</span><span class="value_msg">张三</span></div>
+                        <div class="msg_for_hopital"><span>姓名</span><span class="value_msg">{{item.name}}</span></div>
+                        <div class="msg_for_hopital"><span>体重</span><span class="value_msg">{{item.heave}}</span></div>
+                        <div class="msg_for_hopital"><span>过敏史</span><span class="value_msg">{{item.guo_ming}}</span></div>
+                        <div class="msg_for_hopital"><span>送检科室</span><span class="value_msg">{{item.check_room}}</span></div>
                     </div>
                 </div>
 
@@ -115,7 +104,47 @@
     export default {
         data () {
             return {
-
+                user_msg:[
+                    {
+                        name:'张三',
+                        sex:'男',
+                        heigth:'172',
+                        heave:'52kg',
+                        age:'25',
+                        xue:'O型',
+                        guo_ming:'无',
+                        num:'123',
+                        type:'普通',
+                        check_room:'科室一',
+                        result:'正常'
+                    },
+                    {
+                        name:'张三',
+                        sex:'男',
+                        heigth:'172',
+                        heave:'52kg',
+                        age:'25',
+                        xue:'O型',
+                        guo_ming:'无',
+                        num:'123',
+                        type:'普通',
+                        check_room:'科室一',
+                        result:'正常'
+                    },
+                    {
+                        name:'张三',
+                        sex:'男',
+                        heigth:'172',
+                        heave:'52kg',
+                        age:'25',
+                        xue:'O型',
+                        guo_ming:'无',
+                        num:'123',
+                        type:'普通',
+                        check_room:'科室一',
+                        result:'正常'
+                    }
+                ]
             }
         },
         components:{

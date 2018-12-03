@@ -231,6 +231,8 @@
 
     .alert_css{
         padding:0 20px;
+        max-height: 500px;
+        overflow-y: scroll;
         .titles{
             font-family: PingFangSC-Regular;
             font-size: 14px;
@@ -463,34 +465,36 @@
                     :loading="loading"
                     @on-ok="asyncOK" width="1200">
                 <div class="alert_css">
-                    <div class="titles">
-                        患者信息
+                    <div v-for="(item,index) in user_msg">
+                        <div class="titles">
+                            患者信息
+                        </div>
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td class="name_black">姓名</td><td>{{item.name}}</td>
+                                <td class="name_black">性别</td><td>{{item.sex}}</td>
+                                <td class="name_black">身高</td><td>{{item.heigth}}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_black">体重</td><td>{{item.heave}}</td>
+                                <td class="name_black">年龄</td><td>{{item.age}}</td>
+                                <td class="name_black">血型</td><td>{{item.xue}}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_black">过敏史</td><td>{{item.guo_ming}}</td>
+                                <td class="name_black">病院编号</td><td>{{item.num}}</td>
+                                <td class="name_black">患者类型</td><td>{{item.type}}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_black">送检科室</td><td>{{item.check_room}}</td>
+                                <td class="name_black">诊断结果</td><td colspan="3" >{{item.result}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td class="name_black">姓名</td><td>张三</td>
-                            <td class="name_black">性别</td><td>张三</td>
-                            <td class="name_black">身高</td><td>张三</td>
-                        </tr>
-                        <tr>
-                            <td class="name_black">体重</td><td>张三</td>
-                            <td class="name_black">年龄</td><td>张三</td>
-                            <td class="name_black">血型</td><td>张三</td>
-                        </tr>
-                        <tr>
-                            <td class="name_black">过敏史</td><td>张三</td>
-                            <td class="name_black">病院编号</td><td>张三</td>
-                            <td class="name_black">患者类型</td><td>张三</td>
-                        </tr>
-                        <tr>
-                            <td class="name_black">送检科室</td><td>张三</td>
-                            <td class="name_black">诊断结果</td><td colspan="3" >张三</td>
-                        </tr>
-                        </tbody>
-                    </table>
 
-                    <div class="titles">
+                    <!--<div class="titles">
                         患者信息
                     </div>
                     <table>
@@ -526,7 +530,7 @@
                             <td class="name_black">血型</td><td>张三</td>
                         </tr>
                         </tbody>
-                    </table>
+                    </table>-->
                 </div>
 
                 <div slot="footer" style="text-align: center;margin: 10px 0 20px 0">
@@ -622,9 +626,51 @@
                         zi_duan_two:'222',
                         zi_duan_three:'333'
                     }
+                ],
+                user_msg:[
+                    {
+                        name:'张三',
+                        sex:'男',
+                        heigth:'172',
+                        heave:'52kg',
+                        age:'25',
+                        xue:'O型',
+                        guo_ming:'无',
+                        num:'123',
+                        type:'普通',
+                        check_room:'科室一',
+                        result:'正常'
+                    },
+                    {
+                        name:'张三',
+                        sex:'男',
+                        heigth:'172',
+                        heave:'52kg',
+                        age:'25',
+                        xue:'O型',
+                        guo_ming:'无',
+                        num:'123',
+                        type:'普通',
+                        check_room:'科室一',
+                        result:'正常'
+                    },
+                    {
+                        name:'张三',
+                        sex:'男',
+                        heigth:'172',
+                        heave:'52kg',
+                        age:'25',
+                        xue:'O型',
+                        guo_ming:'无',
+                        num:'123',
+                        type:'普通',
+                        check_room:'科室一',
+                        result:'正常'
+                    }
                 ]
             }
         },
+
         components:{
             baisis_msg,
             basis_msg_mobile

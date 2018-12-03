@@ -182,8 +182,9 @@
                 <div class="title_img_one">
                     <div class="tiel_lef">
                         <img class="imgs" src="https://i.loli.net/2017/08/21/599a521472424.jpg" alt="">
-                        <div class="name">张三</div>
-                        <i style="font-size: 14px;color: rgb(110,121,238);margin-top: 15px" class="icon iconfont icon-man-"></i>
+                        <div class="name">{{basis_msg.name}}</div>
+                        <i  v-if="basis_msg.sex == '男'" style="font-size: 14px;color: rgb(110,121,238);margin-top: 15px" class="icon iconfont icon-man-"></i>
+                        <i  v-else style="font-size: 14px;color: #E6655F;margin-top: 15px" class="icon iconfont icon-woman-"></i>
                     </div>
 
                     <i  @click="cancel()" style="font-size: 20px;color: rgb(230,101,95);" class="icon iconfont icon-close-"></i>
@@ -191,31 +192,31 @@
                 <div class="line_css_wod"></div>
                 <div class="show_your_msg">
                     <div class="titel_name">
-                        <div class="title_left_">身高</div> <div class="title_rihgt_">170</div>
+                        <div class="title_left_">身高</div> <div class="title_rihgt_">{{basis_msg.heigth}}</div>
                     </div>
                     <div class="titel_name">
-                        <div class="title_left_">体重</div> <div class="title_rihgt_">170</div>
+                        <div class="title_left_">体重</div> <div class="title_rihgt_">{{basis_msg.heave}}</div>
                     </div>
                     <div class="titel_name">
-                        <div class="title_left_">年龄</div> <div class="title_rihgt_">170</div>
+                        <div class="title_left_">年龄</div> <div class="title_rihgt_">{{basis_msg.age}}</div>
                     </div>
                     <div class="titel_name">
-                        <div class="title_left_">血型</div> <div class="title_rihgt_">170</div>
+                        <div class="title_left_">血型</div> <div class="title_rihgt_">{{basis_msg.xue}}</div>
                     </div>
                     <div class="titel_name">
-                        <div class="title_left_">过敏史</div> <div class="title_rihgt_">170</div>
+                        <div class="title_left_">过敏史</div> <div class="title_rihgt_">{{basis_msg.guo_ming}}</div>
                     </div>
                     <div class="titel_name">
-                        <div class="title_left_">病员编号</div> <div class="title_rihgt_">170</div>
+                        <div class="title_left_">病员编号</div> <div class="title_rihgt_">{{basis_msg.num}}</div>
                     </div>
                     <div class="titel_name">
-                        <div class="title_left_">送检科室</div> <div class="title_rihgt_">170</div>
+                        <div class="title_left_">送检科室</div> <div class="title_rihgt_">{{basis_msg.check_room}}</div>
                     </div>
                     <br>
                     <div class="titel_name">
                         <div class="title_left_">诊断结果</div>
                     </div>
-                    <div class="result_mob">诊断结果诊断结果诊断结果诊断结果诊断结果</div>
+                    <div class="result_mob">{{basis_msg.result}}</div>
                 </div>
             </div>
         </div>
@@ -226,7 +227,20 @@
     export default{
         data () {
             return {
-                show_if_user_msg:false
+                show_if_user_msg:false,
+                basis_msg:{
+                    name:'张三',
+                    sex:'男',
+                    heigth:'172',
+                    heave:'52kg',
+                    age:'25',
+                    xue:'O型',
+                    guo_ming:'无',
+                    num:'123',
+                    type:'普通',
+                    check_room:'科室一',
+                    result:'正常'
+                }
             }
         },
         props:[
